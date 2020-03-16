@@ -14,6 +14,7 @@
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
 		BEADAABD241C13090084F93C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEADAABB241C13090084F93C /* LaunchScreen.storyboard */; };
 		BEADAAC8241C13090084F93C /* CTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAC7241C13090084F93C /* CTATests.swift */; };
+		BEADAB24241FD4380084F93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEADAB23241FD4380084F93C /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		BEADAAC3241C13090084F93C /* CTATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAC7241C13090084F93C /* CTATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTATests.swift; sourceTree = "<group>"; };
 		BEADAAC9241C13090084F93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEADAB23241FD4380084F93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				BEADAAC7241C13090084F93C /* CTATests.swift */,
 				BEADAAC9241C13090084F93C /* Info.plist */,
+				BEADAB23241FD4380084F93C /* GoogleService-Info.plist */,
 			);
 			path = CTATests;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEADAB24241FD4380084F93C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
