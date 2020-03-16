@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3902ACA32743E0CB198FFFD0 /* Pods_CTA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B86236319227A472CEAC62 /* Pods_CTA.framework */; };
+		BE50F7592420373B00672272 /* EventsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7582420373B00672272 /* EventsAPIClient.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAAB5241C13070084F93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB4241C13070084F93C /* ViewController.swift */; };
@@ -35,6 +36,7 @@
 		8ED9BA36DD2FAF47ECC85050 /* Pods-CTA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTA.debug.xcconfig"; path = "Target Support Files/Pods-CTA/Pods-CTA.debug.xcconfig"; sourceTree = "<group>"; };
 		A20590E5D5CBBAA22419FA43 /* Pods-CTA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTA.release.xcconfig"; path = "Target Support Files/Pods-CTA/Pods-CTA.release.xcconfig"; sourceTree = "<group>"; };
 		B0B86236319227A472CEAC62 /* Pods_CTA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE50F7582420373B00672272 /* EventsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAPIClient.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +83,21 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BE50F756242036FB00672272 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		BE50F7572420372100672272 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				BE50F7582420373B00672272 /* EventsAPIClient.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
 		BEADAAA4241C13070084F93C = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +121,8 @@
 		BEADAAAF241C13070084F93C /* CTA */ = {
 			isa = PBXGroup;
 			children = (
+				BE50F7572420372100672272 /* Network Services */,
+				BE50F756242036FB00672272 /* Secrets */,
 				BEADAAB0241C13070084F93C /* AppDelegate.swift */,
 				BEADAAB2241C13070084F93C /* SceneDelegate.swift */,
 				BEADAAB4241C13070084F93C /* ViewController.swift */,
@@ -305,6 +324,7 @@
 			files = (
 				BEADAAB5241C13070084F93C /* ViewController.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
+				BE50F7592420373B00672272 /* EventsAPIClient.swift in Sources */,
 				BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
