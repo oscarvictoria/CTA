@@ -11,8 +11,6 @@
 		BE50F7592420373B00672272 /* EventsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7582420373B00672272 /* EventsAPIClient.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
-		BEADAAB5241C13070084F93C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB4241C13070084F93C /* ViewController.swift */; };
-		BEADAAB8241C13070084F93C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB6241C13070084F93C /* Main.storyboard */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
 		BEADAABD241C13090084F93C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEADAABB241C13090084F93C /* LaunchScreen.storyboard */; };
 		BEADAAC8241C13090084F93C /* CTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAC7241C13090084F93C /* CTATests.swift */; };
@@ -40,8 +38,6 @@
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BEADAAB4241C13070084F93C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		BEADAAB7241C13070084F93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BEADAAB9241C13090084F93C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BEADAABC241C13090084F93C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BEADAABE241C13090084F93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +94,52 @@
 			path = "Network Services";
 			sourceTree = "<group>";
 		};
+		BE50F75A242037B000672272 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		BE50F75B242037BD00672272 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BE50F75C242037C700672272 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BE50F75D242037E600672272 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		BE50F75E242037F200672272 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		BE50F75F2420380400672272 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BEADAABB241C13090084F93C /* LaunchScreen.storyboard */,
+				BEADAAB9241C13090084F93C /* Assets.xcassets */,
+				BEADAAB2241C13070084F93C /* SceneDelegate.swift */,
+				BEADAAB0241C13070084F93C /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		BEADAAA4241C13070084F93C = {
 			isa = PBXGroup;
 			children = (
@@ -121,14 +163,14 @@
 		BEADAAAF241C13070084F93C /* CTA */ = {
 			isa = PBXGroup;
 			children = (
+				BE50F75F2420380400672272 /* Supporting Files */,
+				BE50F75E242037F200672272 /* Controllers */,
+				BE50F75D242037E600672272 /* Cells */,
+				BE50F75C242037C700672272 /* Views */,
+				BE50F75B242037BD00672272 /* Models */,
+				BE50F75A242037B000672272 /* Storyboards */,
 				BE50F7572420372100672272 /* Network Services */,
 				BE50F756242036FB00672272 /* Secrets */,
-				BEADAAB0241C13070084F93C /* AppDelegate.swift */,
-				BEADAAB2241C13070084F93C /* SceneDelegate.swift */,
-				BEADAAB4241C13070084F93C /* ViewController.swift */,
-				BEADAAB6241C13070084F93C /* Main.storyboard */,
-				BEADAAB9241C13090084F93C /* Assets.xcassets */,
-				BEADAABB241C13090084F93C /* LaunchScreen.storyboard */,
 				BEADAABE241C13090084F93C /* Info.plist */,
 				BEADAB25241FDCD80084F93C /* GoogleService-Info.plist */,
 			);
@@ -240,7 +282,6 @@
 				BEADAABD241C13090084F93C /* LaunchScreen.storyboard in Resources */,
 				BEADAB26241FDCD80084F93C /* GoogleService-Info.plist in Resources */,
 				BEADAABA241C13090084F93C /* Assets.xcassets in Resources */,
-				BEADAAB8241C13070084F93C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BEADAAB5241C13070084F93C /* ViewController.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
 				BE50F7592420373B00672272 /* EventsAPIClient.swift in Sources */,
 				BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */,
@@ -348,14 +388,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		BEADAAB6241C13070084F93C /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BEADAAB7241C13070084F93C /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BEADAABB241C13090084F93C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
