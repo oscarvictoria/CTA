@@ -15,6 +15,7 @@
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
 		BEADAABD241C13090084F93C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEADAABB241C13090084F93C /* LaunchScreen.storyboard */; };
 		BEADAAC8241C13090084F93C /* CTATests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAC7241C13090084F93C /* CTATests.swift */; };
+		BEADAB26241FDCD80084F93C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BEADAB25241FDCD80084F93C /* GoogleService-Info.plist */; };
 		FA9D396522CB8F042E6972BA /* Pods_CTATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 448AEE757F1F7ED4BF7FB7D2 /* Pods_CTATests.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		BEADAAC3241C13090084F93C /* CTATests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CTATests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAC7241C13090084F93C /* CTATests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTATests.swift; sourceTree = "<group>"; };
 		BEADAAC9241C13090084F93C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEADAB25241FDCD80084F93C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD1B30CD20E775298EAFF9D8 /* Pods-CTATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTATests.release.xcconfig"; path = "Target Support Files/Pods-CTATests/Pods-CTATests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 				BEADAAB9241C13090084F93C /* Assets.xcassets */,
 				BEADAABB241C13090084F93C /* LaunchScreen.storyboard */,
 				BEADAABE241C13090084F93C /* Info.plist */,
+				BEADAB25241FDCD80084F93C /* GoogleService-Info.plist */,
 			);
 			path = CTA;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEADAABD241C13090084F93C /* LaunchScreen.storyboard in Resources */,
+				BEADAB26241FDCD80084F93C /* GoogleService-Info.plist in Resources */,
 				BEADAABA241C13090084F93C /* Assets.xcassets in Resources */,
 				BEADAAB8241C13070084F93C /* Main.storyboard in Resources */,
 			);
