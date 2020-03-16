@@ -14,6 +14,7 @@
 		BE50F7692420393000672272 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7682420393000672272 /* Events.swift */; };
 		BE50F76B2420394400672272 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE50F76A2420394400672272 /* LoginView.storyboard */; };
 		BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F76C2420395D00672272 /* EventsAPIClient.swift */; };
+		BE50F77424203BEF00672272 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F77324203BEF00672272 /* Secrets.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		BE50F7682420393000672272 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		BE50F76A2420394400672272 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		BE50F76C2420395D00672272 /* EventsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAPIClient.swift; sourceTree = "<group>"; };
+		BE50F77324203BEF00672272 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		BE50F77224203BD900672272 /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				BE50F77324203BEF00672272 /* Secrets.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
 		BEADAAA4241C13070084F93C = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		BEADAAAF241C13070084F93C /* CTA */ = {
 			isa = PBXGroup;
 			children = (
+				BE50F77224203BD900672272 /* Secrets */,
 				BE50F75F2420380400672272 /* Supporting Files */,
 				BE50F75E242037F200672272 /* Controllers */,
 				BE50F75D242037E600672272 /* Cells */,
@@ -372,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE50F762242038C900672272 /* LoginViewController.swift in Sources */,
+				BE50F77424203BEF00672272 /* Secrets.swift in Sources */,
 				BE50F7672420392000672272 /* DetailView.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
