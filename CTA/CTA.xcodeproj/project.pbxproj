@@ -20,6 +20,7 @@
 		BE50F78024206A3300672272 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = BE50F77F24206A3300672272 /* NetworkHelper */; };
 		BE50F78224206AAE00672272 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78124206AAE00672272 /* Objects.swift */; };
 		BE50F78424206B2A00672272 /* ElementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78324206B2A00672272 /* ElementsCell.swift */; };
+		BE50F786242070BF00672272 /* SelectAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F785242070BF00672272 /* SelectAPIController.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		BE50F77C242068D800672272 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
 		BE50F78124206AAE00672272 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		BE50F78324206B2A00672272 /* ElementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsCell.swift; sourceTree = "<group>"; };
+		BE50F785242070BF00672272 /* SelectAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIController.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				BE50F761242038C800672272 /* LoginViewController.swift */,
+				BE50F785242070BF00672272 /* SelectAPIController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				BE50F77424203BEF00672272 /* Secrets.swift in Sources */,
 				BE50F7672420392000672272 /* DetailView.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
+				BE50F786242070BF00672272 /* SelectAPIController.swift in Sources */,
 				BE50F78424206B2A00672272 /* ElementsCell.swift in Sources */,
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
 				BE50F7692420393000672272 /* Events.swift in Sources */,

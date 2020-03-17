@@ -7,24 +7,74 @@
 //
 
 import UIKit
+import FirebaseAuth
+
+enum AccountState {
+    case existingUser
+    case newUser
+}
+
+enum UserAPI {
+    case ticketMaster
+    case museum
+}
 
 class LoginViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    
+    
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
+    
+    private var accountState: AccountState = .existingUser
+    
+    private var userAPI: UserAPI = .ticketMaster
+    
+    //    private var databaseService = DatabaseService()
+    
+    private var authSession = AuthenticationSession()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    public func selectAPI() {
+        guard let apiController = storyboard?.instantiateViewController(identifier: "SelectAPIController") as? SelectAPIController else {
+            fatalError("could not downcast to SelectAPIController")
+        }
+        apiController.accountState = .existingUser
+        apiController.modalPresentationStyle = .popover
+//        apiController.modalTransitionStyle = .crossDissolve
+        present(apiController, animated: true)
     }
-    */
-
+    
+    public func selectAPINewUser() {
+        guard let apiController = storyboard?.instantiateViewController(identifier: "SelectAPIController") as? SelectAPIController else {
+            fatalError("could not downcast to SelectAPIController")
+        }
+        apiController.accountState = .newUser
+        apiController.modalPresentationStyle = .popover
+//        apiController.modalTransitionStyle = .crossDissolve
+        present(apiController, animated: true)
+    }
+    
+    
+    
+    @IBAction func loginButtonPressed(_ sender: UIButton) {
+        print("login button pressed")
+        selectAPI()
+    }
+    
+    
+    
+    @IBAction func createAccountButtonPressed(_ sender: UIButton) {
+        print("create account button pressed")
+        selectAPINewUser()
+    }
+    
+    
 }
