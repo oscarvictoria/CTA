@@ -84,8 +84,8 @@ class LoginViewController: UIViewController {
             fatalError("could not downcast to SelectAPIController")
         }
         apiController.accountState = .existingUser
-        apiController.modalPresentationStyle = .popover
-//        apiController.modalTransitionStyle = .crossDissolve
+        apiController.modalPresentationStyle = .fullScreen
+        apiController.modalTransitionStyle = .crossDissolve
         present(apiController, animated: true)
     }
     
@@ -95,8 +95,8 @@ class LoginViewController: UIViewController {
         }
 
         apiController.accountState = .newUser
-        apiController.modalPresentationStyle = .popover
-//        apiController.modalTransitionStyle = .crossDissolve
+        apiController.modalPresentationStyle = .fullScreen
+        apiController.modalTransitionStyle = .crossDissolve
         present(apiController, animated: true)
     }
     

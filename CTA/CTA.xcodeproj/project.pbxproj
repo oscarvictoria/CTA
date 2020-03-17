@@ -25,6 +25,8 @@
 		BE50F78A242080C900672272 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE50F789242080C900672272 /* MainView.storyboard */; };
 		BE50F78C242080F700672272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78B242080F700672272 /* MainTabBarController.swift */; };
 		BE50F78E242084E900672272 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78D242084E900672272 /* FeedViewController.swift */; };
+		BE50F79024215ABC00672272 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78F24215ABC00672272 /* UserSession.swift */; };
+		BE50F7922421630900672272 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7912421630900672272 /* User.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -66,6 +68,8 @@
 		BE50F789242080C900672272 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
 		BE50F78B242080F700672272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BE50F78D242084E900672272 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		BE50F78F24215ABC00672272 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
+		BE50F7912421630900672272 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 			children = (
 				BE50F7682420393000672272 /* Events.swift */,
 				BE50F78124206AAE00672272 /* Objects.swift */,
+				BE50F7912421630900672272 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -197,6 +202,7 @@
 			children = (
 				BE50F77C242068D800672272 /* AuthenticationSession.swift */,
 				BE50F787242079AD00672272 /* DatabaseService.swift */,
+				BE50F78F24215ABC00672272 /* UserSession.swift */,
 			);
 			path = "Firebase Services";
 			sourceTree = "<group>";
@@ -442,11 +448,13 @@
 				BE50F7672420392000672272 /* DetailView.swift in Sources */,
 				BE50F78E242084E900672272 /* FeedViewController.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
+				BE50F79024215ABC00672272 /* UserSession.swift in Sources */,
 				BE50F786242070BF00672272 /* SelectAPIController.swift in Sources */,
 				BE50F78424206B2A00672272 /* ElementsCell.swift in Sources */,
 				BE50F788242079AD00672272 /* DatabaseService.swift in Sources */,
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
 				BE50F7692420393000672272 /* Events.swift in Sources */,
+				BE50F7922421630900672272 /* User.swift in Sources */,
 				BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */,
 				BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */,
 				BE50F7792420684A00672272 /* UIViewController + Alerts.swift in Sources */,

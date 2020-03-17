@@ -14,6 +14,8 @@ class SelectAPIController: UIViewController {
     
     @IBOutlet weak var pickerView: UIPickerView!
     
+    var userSession = UserSession()
+    
     private var authSession = AuthenticationSession()
     
     private var databaseService = DatabaseService()
@@ -22,7 +24,7 @@ class SelectAPIController: UIViewController {
     
     private let list = ["ticketmaster", "Musuem"]
     
-    private var listName: String!
+    var listName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,21 +37,32 @@ class SelectAPIController: UIViewController {
     
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
-        databaseService.updateDatabaseUser(userAPI: listName) { (result) in
-            switch result {
-            case .failure(let error):
-                print("error: \(error)")
-            case .success:
-                print("succesfully updated user api")
-            }
-        }
+        updateAPI()
+        sendAPI()
         segueToMainView()
-        
+    }
+    
+    func updateAPI() {
+        databaseService.updateDatabaseUser(userAPI: listName) { (result) in
+             switch result {
+             case .failure(let error):
+                 print("error: \(error)")
+             case .success:
+                 print("succesfully updated user api")
+             }
+         }
     }
     
     func segueToMainView() {
         UIViewController.showViewController(storyboardName: "MainView", viewControllerId: "MainTabBarController")
     }
+    
+    func sendAPI() {
+       
+    }
+    
+    
+    
     
     
     
