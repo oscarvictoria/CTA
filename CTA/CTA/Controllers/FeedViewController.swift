@@ -93,16 +93,24 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if navigationItem.title == "ticketmaster" {
-             print("current api is ticketmaster and the count is \(event.count)")
+//             print("current api is ticketmaster and the count is \(event.count)")
             return event.count
         } else {
-             print("current api is museum and the count is \(objects.count)")
+//             print("current api is museum and the count is \(objects.count)")
             return objects.count
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        
+        if navigationItem.title == "ticketmaster" {
+            let events = event[indexPath.row]
+            cell.textLabel?.text = events.name
+        } else {
+            let object = objects[indexPath.row]
+            cell.textLabel?.text = object.title
+        }
         return cell
     }
 }
