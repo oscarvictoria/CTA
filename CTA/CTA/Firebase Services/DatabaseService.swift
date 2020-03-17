@@ -17,12 +17,28 @@ class DatabaseService {
     static let usersCollection = "users"
     
     
-    public func createDatabaseUser(userAPI: String, authDataResult: AuthDataResult, completion: @escaping (Result <Bool, Error>)->()) {
+    public func createDatabaseUser(authDataResult: AuthDataResult, completion: @escaping (Result <Bool, Error>)->()) {
         
         guard let email = authDataResult.user.email else {
                   return
               }
-        db.collection(DatabaseService.usersCollection).document(authDataResult.user.uid).setData(["email" : email, "createdDate": Timestamp(date: Date()), "userId": authDataResult.user.uid, "userAPI": userAPI]) { (error) in
+        db.collection(DatabaseService.usersCollection).document(authDataResult.user.uid).setData(["email" : email, "createdDate": Timestamp(date: Date()), "userId": authDataResult.user.uid]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+        
+    }
+    
+    public func updateDatabaseUser(userAPI: String, completion: @escaping (Result <Bool, Error>)->()) {
+        
+        guard let user = Auth.auth().currentUser else {
+                 return
+             }
+        
+        db.collection(DatabaseService.usersCollection).document(user.uid).updateData(["userAPI" : userAPI]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {

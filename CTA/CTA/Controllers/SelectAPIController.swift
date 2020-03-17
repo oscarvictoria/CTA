@@ -22,11 +22,6 @@ class SelectAPIController: UIViewController {
     
     private let list = ["ticketmaster", "Musuem"]
     
-    var email = String()
-    
-    var password = String()
-    
-    
     private var listName: String!
     
     override func viewDidLoad() {
@@ -39,60 +34,26 @@ class SelectAPIController: UIViewController {
     }
     
     
-    private func continueLoginFlow(email: String, password: String) {
-        if accountState == .existingUser  {
-            authSession.signExistingUser(email: email, password: password) { (result) in
-                switch result {
-                case .failure(let error):
-                    print("error \(error)")
-                case .success:
-                    DispatchQueue.main.async {
-                        self.segueToMainView()
-                    }
-                }
-            }
-        } else {
-            authSession.createNewUser(email: email, password: password) { (result) in
-                switch result {
-                case .failure(let error):
-                    print("error \(error)")
-                case .success(let authDataResult):
-                    self.createDatabaseUser(authDataResult: authDataResult)
-                }
-            }
-        }
-    }
-    
-    //
-    private func createDatabaseUser(authDataResult: AuthDataResult) {
-        databaseService.createDatabaseUser(userAPI: listName, authDataResult: authDataResult) { (result) in
+    @IBAction func submitButtonPressed(_ sender: UIButton) {
+        databaseService.updateDatabaseUser(userAPI: listName) { (result) in
             switch result {
             case .failure(let error):
-                DispatchQueue.main.async {
-                    self.showAlert(title: "Account Error", message: error.localizedDescription)
-                }
+                print("error: \(error)")
             case .success:
-                DispatchQueue.main.async {
-                    self.segueToMainView()
-                    
-                }
+                print("succesfully updated user api")
             }
         }
-    }
-    
-    
-    @IBAction func submitButtonPressed(_ sender: UIButton) {
-        
-        continueLoginFlow(email: email, password: password)
-        print("current user email is: \(email)")
-        print("current user password is: \(password)")
-        
+        segueToMainView()
         
     }
     
     func segueToMainView() {
         UIViewController.showViewController(storyboardName: "MainView", viewControllerId: "MainTabBarController")
     }
+    
+    
+    
+    
     
     
 }
