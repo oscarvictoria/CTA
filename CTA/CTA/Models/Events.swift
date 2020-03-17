@@ -7,3 +7,16 @@
 //
 
 import Foundation
+
+struct Embedded: Codable {
+    let _embedded: EventData
+}
+struct EventData: Codable {
+    let events: [Events]
+}
+
+struct Events: Codable {
+    let name: String
+    let type: String
+    let id: String
+}

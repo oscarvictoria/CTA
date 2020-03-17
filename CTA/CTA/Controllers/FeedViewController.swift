@@ -12,46 +12,97 @@ import FirebaseFirestore
 
 class FeedViewController: UIViewController {
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     private var databaseService = DatabaseService()
     
     private var listener: ListenerRegistration?
     
-   
-    
     var apiName = String()
     
+    var event = [Events]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     
+    var objects = [Art]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        retrieve()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        retrieve()
-//        print("current api name is \(apiName)")
-//        navigationItem.title = apiName
+        configureTableView()
+        getItems()
+        getEvents()
     }
-
+    
+    
     func retrieve() {
         let ticketmaster = UserDefaults.standard.object(forKey: Keys.ticketMaster) as? String
-            navigationItem.title = ticketmaster
-//        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
-//        navigationItem.title = museum
+        navigationItem.title = ticketmaster
+        //        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
+        //        navigationItem.title = museum
     }
     
+    private func configureTableView() {
+        tableView.dataSource = self
+    }
     
+    func getEvents() {
+        EventsAPIClient.getEvents(searchQuery: "Seattle") { (result) in
+            switch result {
+            case .failure(let appError):
+                print("app error \(appError)")
+            case .success(let event):
+                self.event = event
+            }
+        }
+    }
     
-    @IBAction func logoutButton(_ sender: UIButton) {
-        
-        
-        do {
-            try Auth.auth().signOut()
-            UIViewController.showViewController(storyboardName: "LoginView", viewControllerId: "LoginViewController")
-        } catch {
-            DispatchQueue.main.async {
-                self.showAlert(title: "Error signing out", message: "\(error.localizedDescription)")
+    func getItems() {
+        ObjectsAPIClient.getItems { (result) in
+            switch result {
+            case .failure(let appError):
+                print("app error: \(appError)")
+            case .success(let art):
+                self.objects = art
             }
         }
     }
     
     
+    
+    
+    
 }
 
 
+extension FeedViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if navigationItem.title == "ticketmaster" {
+             print("current api is ticketmaster and the count is \(event.count)")
+            return event.count
+        } else {
+             print("current api is museum and the count is \(objects.count)")
+            return objects.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        return cell
+    }
+}

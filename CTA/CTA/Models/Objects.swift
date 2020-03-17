@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct Items: Codable {
+    let artObjects: [Art]
+}
+
+struct Art: Codable {
+    let title: String
+    
+}

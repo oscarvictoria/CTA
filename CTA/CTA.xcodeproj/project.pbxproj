@@ -28,6 +28,9 @@
 		BE50F79024215ABC00672272 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78F24215ABC00672272 /* UserSession.swift */; };
 		BE50F7922421630900672272 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7912421630900672272 /* User.swift */; };
 		BE50F79424217EC000672272 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79324217EC000672272 /* Switcher.swift */; };
+		BE50F79624218D9400672272 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79524218D9400672272 /* FavoritesViewController.swift */; };
+		BE50F79824218DB000672272 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79724218DB000672272 /* SettingsViewController.swift */; };
+		BE50F79A24218ED100672272 /* ObjectsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79924218ED100672272 /* ObjectsAPIClient.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -72,6 +75,9 @@
 		BE50F78F24215ABC00672272 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		BE50F7912421630900672272 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE50F79324217EC000672272 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
+		BE50F79524218D9400672272 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		BE50F79724218DB000672272 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BE50F79924218ED100672272 /* ObjectsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsAPIClient.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				BE50F76C2420395D00672272 /* EventsAPIClient.swift */,
+				BE50F79924218ED100672272 /* ObjectsAPIClient.swift */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -168,6 +175,8 @@
 				BE50F785242070BF00672272 /* SelectAPIController.swift */,
 				BE50F78B242080F700672272 /* MainTabBarController.swift */,
 				BE50F78D242084E900672272 /* FeedViewController.swift */,
+				BE50F79524218D9400672272 /* FavoritesViewController.swift */,
+				BE50F79724218DB000672272 /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -445,11 +454,13 @@
 			files = (
 				BE50F762242038C900672272 /* LoginViewController.swift in Sources */,
 				BE50F77D242068D800672272 /* AuthenticationSession.swift in Sources */,
+				BE50F79824218DB000672272 /* SettingsViewController.swift in Sources */,
 				BE50F78C242080F700672272 /* MainTabBarController.swift in Sources */,
 				BE50F78224206AAE00672272 /* Objects.swift in Sources */,
 				BE50F77424203BEF00672272 /* Secrets.swift in Sources */,
 				BE50F7672420392000672272 /* DetailView.swift in Sources */,
 				BE50F78E242084E900672272 /* FeedViewController.swift in Sources */,
+				BE50F79A24218ED100672272 /* ObjectsAPIClient.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
 				BE50F79024215ABC00672272 /* UserSession.swift in Sources */,
 				BE50F786242070BF00672272 /* SelectAPIController.swift in Sources */,
@@ -461,6 +472,7 @@
 				BE50F79424217EC000672272 /* Switcher.swift in Sources */,
 				BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */,
 				BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */,
+				BE50F79624218D9400672272 /* FavoritesViewController.swift in Sources */,
 				BE50F7792420684A00672272 /* UIViewController + Alerts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
