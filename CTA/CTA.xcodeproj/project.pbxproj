@@ -3,18 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3902ACA32743E0CB198FFFD0 /* Pods_CTA.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0B86236319227A472CEAC62 /* Pods_CTA.framework */; };
 		BE50F762242038C900672272 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F761242038C800672272 /* LoginViewController.swift */; };
-		BE50F7652420390600672272 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7642420390600672272 /* EventCell.swift */; };
 		BE50F7672420392000672272 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7662420392000672272 /* DetailView.swift */; };
 		BE50F7692420393000672272 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7682420393000672272 /* Events.swift */; };
 		BE50F76B2420394400672272 /* LoginView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE50F76A2420394400672272 /* LoginView.storyboard */; };
 		BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F76C2420395D00672272 /* EventsAPIClient.swift */; };
 		BE50F77424203BEF00672272 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F77324203BEF00672272 /* Secrets.swift */; };
+		BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7762420680400672272 /* UIViewController + Navigation.swift */; };
+		BE50F7792420684A00672272 /* UIViewController + Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7782420684A00672272 /* UIViewController + Alerts.swift */; };
+		BE50F77D242068D800672272 /* AuthenticationSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F77C242068D800672272 /* AuthenticationSession.swift */; };
+		BE50F78024206A3300672272 /* NetworkHelper in Frameworks */ = {isa = PBXBuildFile; productRef = BE50F77F24206A3300672272 /* NetworkHelper */; };
+		BE50F78224206AAE00672272 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78124206AAE00672272 /* Objects.swift */; };
+		BE50F78424206B2A00672272 /* ElementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78324206B2A00672272 /* ElementsCell.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -41,12 +46,16 @@
 		A20590E5D5CBBAA22419FA43 /* Pods-CTA.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CTA.release.xcconfig"; path = "Target Support Files/Pods-CTA/Pods-CTA.release.xcconfig"; sourceTree = "<group>"; };
 		B0B86236319227A472CEAC62 /* Pods_CTA.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CTA.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE50F761242038C800672272 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		BE50F7642420390600672272 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		BE50F7662420392000672272 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		BE50F7682420393000672272 /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		BE50F76A2420394400672272 /* LoginView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginView.storyboard; sourceTree = "<group>"; };
 		BE50F76C2420395D00672272 /* EventsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsAPIClient.swift; sourceTree = "<group>"; };
 		BE50F77324203BEF00672272 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		BE50F7762420680400672272 /* UIViewController + Navigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Navigation.swift"; sourceTree = "<group>"; };
+		BE50F7782420684A00672272 /* UIViewController + Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alerts.swift"; sourceTree = "<group>"; };
+		BE50F77C242068D800672272 /* AuthenticationSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationSession.swift; sourceTree = "<group>"; };
+		BE50F78124206AAE00672272 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
+		BE50F78324206B2A00672272 /* ElementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsCell.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3902ACA32743E0CB198FFFD0 /* Pods_CTA.framework in Frameworks */,
+				BE50F78024206A3300672272 /* NetworkHelper in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -111,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				BE50F7682420393000672272 /* Events.swift */,
+				BE50F78124206AAE00672272 /* Objects.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -126,7 +137,7 @@
 		BE50F75D242037E600672272 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				BE50F7642420390600672272 /* EventCell.swift */,
+				BE50F78324206B2A00672272 /* ElementsCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -158,6 +169,23 @@
 			path = Secrets;
 			sourceTree = "<group>";
 		};
+		BE50F775242067E000672272 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE50F7762420680400672272 /* UIViewController + Navigation.swift */,
+				BE50F7782420684A00672272 /* UIViewController + Alerts.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE50F77B242068C200672272 /* Firebase Services */ = {
+			isa = PBXGroup;
+			children = (
+				BE50F77C242068D800672272 /* AuthenticationSession.swift */,
+			);
+			path = "Firebase Services";
+			sourceTree = "<group>";
+		};
 		BEADAAA4241C13070084F93C = {
 			isa = PBXGroup;
 			children = (
@@ -182,13 +210,15 @@
 			isa = PBXGroup;
 			children = (
 				BE50F77224203BD900672272 /* Secrets */,
+				BE50F77B242068C200672272 /* Firebase Services */,
+				BE50F7572420372100672272 /* Network Services */,
+				BE50F775242067E000672272 /* Extensions */,
 				BE50F75F2420380400672272 /* Supporting Files */,
 				BE50F75E242037F200672272 /* Controllers */,
 				BE50F75D242037E600672272 /* Cells */,
 				BE50F75C242037C700672272 /* Views */,
 				BE50F75B242037BD00672272 /* Models */,
 				BE50F75A242037B000672272 /* Storyboards */,
-				BE50F7572420372100672272 /* Network Services */,
 				BEADAABE241C13090084F93C /* Info.plist */,
 				BEADAB25241FDCD80084F93C /* GoogleService-Info.plist */,
 			);
@@ -231,6 +261,9 @@
 			dependencies = (
 			);
 			name = CTA;
+			packageProductDependencies = (
+				BE50F77F24206A3300672272 /* NetworkHelper */,
+			);
 			productName = CTA;
 			productReference = BEADAAAD241C13070084F93C /* CTA.app */;
 			productType = "com.apple.product-type.application";
@@ -282,6 +315,9 @@
 				Base,
 			);
 			mainGroup = BEADAAA4241C13070084F93C;
+			packageReferences = (
+				BE50F77E24206A3300672272 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */,
+			);
 			productRefGroup = BEADAAAE241C13070084F93C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -383,13 +419,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE50F762242038C900672272 /* LoginViewController.swift in Sources */,
+				BE50F77D242068D800672272 /* AuthenticationSession.swift in Sources */,
+				BE50F78224206AAE00672272 /* Objects.swift in Sources */,
 				BE50F77424203BEF00672272 /* Secrets.swift in Sources */,
 				BE50F7672420392000672272 /* DetailView.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
+				BE50F78424206B2A00672272 /* ElementsCell.swift in Sources */,
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
-				BE50F7652420390600672272 /* EventCell.swift in Sources */,
 				BE50F7692420393000672272 /* Events.swift in Sources */,
+				BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */,
 				BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */,
+				BE50F7792420684A00672272 /* UIViewController + Alerts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -652,6 +692,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BE50F77E24206A3300672272 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexpaul/NetworkHelperSPM";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BE50F77F24206A3300672272 /* NetworkHelper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE50F77E24206A3300672272 /* XCRemoteSwiftPackageReference "NetworkHelperSPM" */;
+			productName = NetworkHelper;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BEADAAA5241C13070084F93C /* Project object */;
 }
