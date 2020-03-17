@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       window?.windowScene = windowScene
         
         if let _ = Auth.auth().currentUser { // a user is currently loged in
-//                   Switcher.updateRootVC()
+            UINavigationController.showViewController(storyboardName: "MainView", viewControllerId: "MainTabBarController")
                } else { // no logged in user
                        UIViewController.showViewController(storyboardName: "LoginView", viewControllerId: "LoginViewController")
                    }

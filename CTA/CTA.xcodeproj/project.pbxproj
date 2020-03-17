@@ -21,6 +21,10 @@
 		BE50F78224206AAE00672272 /* Objects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78124206AAE00672272 /* Objects.swift */; };
 		BE50F78424206B2A00672272 /* ElementsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78324206B2A00672272 /* ElementsCell.swift */; };
 		BE50F786242070BF00672272 /* SelectAPIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F785242070BF00672272 /* SelectAPIController.swift */; };
+		BE50F788242079AD00672272 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F787242079AD00672272 /* DatabaseService.swift */; };
+		BE50F78A242080C900672272 /* MainView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE50F789242080C900672272 /* MainView.storyboard */; };
+		BE50F78C242080F700672272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78B242080F700672272 /* MainTabBarController.swift */; };
+		BE50F78E242084E900672272 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78D242084E900672272 /* FeedViewController.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -58,6 +62,10 @@
 		BE50F78124206AAE00672272 /* Objects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Objects.swift; sourceTree = "<group>"; };
 		BE50F78324206B2A00672272 /* ElementsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsCell.swift; sourceTree = "<group>"; };
 		BE50F785242070BF00672272 /* SelectAPIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAPIController.swift; sourceTree = "<group>"; };
+		BE50F787242079AD00672272 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		BE50F789242080C900672272 /* MainView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainView.storyboard; sourceTree = "<group>"; };
+		BE50F78B242080F700672272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		BE50F78D242084E900672272 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				BE50F76A2420394400672272 /* LoginView.storyboard */,
+				BE50F789242080C900672272 /* MainView.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -149,6 +158,8 @@
 			children = (
 				BE50F761242038C800672272 /* LoginViewController.swift */,
 				BE50F785242070BF00672272 /* SelectAPIController.swift */,
+				BE50F78B242080F700672272 /* MainTabBarController.swift */,
+				BE50F78D242084E900672272 /* FeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -185,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				BE50F77C242068D800672272 /* AuthenticationSession.swift */,
+				BE50F787242079AD00672272 /* DatabaseService.swift */,
 			);
 			path = "Firebase Services";
 			sourceTree = "<group>";
@@ -338,6 +350,7 @@
 			files = (
 				BEADAABD241C13090084F93C /* LaunchScreen.storyboard in Resources */,
 				BEADAB26241FDCD80084F93C /* GoogleService-Info.plist in Resources */,
+				BE50F78A242080C900672272 /* MainView.storyboard in Resources */,
 				BEADAABA241C13090084F93C /* Assets.xcassets in Resources */,
 				BE50F76B2420394400672272 /* LoginView.storyboard in Resources */,
 			);
@@ -423,12 +436,15 @@
 			files = (
 				BE50F762242038C900672272 /* LoginViewController.swift in Sources */,
 				BE50F77D242068D800672272 /* AuthenticationSession.swift in Sources */,
+				BE50F78C242080F700672272 /* MainTabBarController.swift in Sources */,
 				BE50F78224206AAE00672272 /* Objects.swift in Sources */,
 				BE50F77424203BEF00672272 /* Secrets.swift in Sources */,
 				BE50F7672420392000672272 /* DetailView.swift in Sources */,
+				BE50F78E242084E900672272 /* FeedViewController.swift in Sources */,
 				BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */,
 				BE50F786242070BF00672272 /* SelectAPIController.swift in Sources */,
 				BE50F78424206B2A00672272 /* ElementsCell.swift in Sources */,
+				BE50F788242079AD00672272 /* DatabaseService.swift in Sources */,
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
 				BE50F7692420393000672272 /* Events.swift in Sources */,
 				BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SelectAPIController: UIViewController {
     
@@ -15,15 +16,15 @@ class SelectAPIController: UIViewController {
     
     private var authSession = AuthenticationSession()
     
-//    private var databaseService = DatabaseService()
+    private var databaseService = DatabaseService()
     
     var accountState: AccountState = .existingUser
     
     private let list = ["ticketmaster", "Musuem"]
     
-    let email = String()
+    var email = String()
     
-    let password = String()
+    var password = String()
     
     
     private var listName: String!
@@ -38,36 +39,77 @@ class SelectAPIController: UIViewController {
     }
     
     
+    private func continueLoginFlow(email: String, password: String) {
+        if accountState == .existingUser  {
+            authSession.signExistingUser(email: email, password: password) { (result) in
+                switch result {
+                case .failure(let error):
+                    print("error \(error)")
+                case .success:
+                    DispatchQueue.main.async {
+                        self.segueToMainView()
+                    }
+                }
+            }
+        } else {
+            authSession.createNewUser(email: email, password: password) { (result) in
+                switch result {
+                case .failure(let error):
+                    print("error \(error)")
+                case .success(let authDataResult):
+                    self.createDatabaseUser(authDataResult: authDataResult)
+                }
+            }
+        }
+    }
+    
+    //
+    private func createDatabaseUser(authDataResult: AuthDataResult) {
+        databaseService.createDatabaseUser(userAPI: listName, authDataResult: authDataResult) { (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Account Error", message: error.localizedDescription)
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self.segueToMainView()
+                    
+                }
+            }
+        }
+    }
+    
+    
     @IBAction func submitButtonPressed(_ sender: UIButton) {
+        
+        continueLoginFlow(email: email, password: password)
+        print("current user email is: \(email)")
+        print("current user password is: \(password)")
+        
         
     }
     
-
+    func segueToMainView() {
+        UIViewController.showViewController(storyboardName: "MainView", viewControllerId: "MainTabBarController")
+    }
+    
+    
 }
 
 extension SelectAPIController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-         return 1
-     }
-     
-     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-         list.count
-     }
-     
-     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         listName = list[row]
-         print(listName!)
-//         userAPI = userAPI == .ticketMaster ? .museum : .ticketMaster
-//         if listName == list[0] {
-//             userAPI = .ticketMaster
-//             apiNumber = 0
-//         } else if listName == list[1] {
-//             userAPI = .museum
-//             apiNumber = 1
-//         }
-//
-         
-     }
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        list.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        listName = list[row]
+        print(listName!)
+    }
     
     
     
@@ -76,6 +118,6 @@ extension SelectAPIController: UIPickerViewDataSource {
 
 extension SelectAPIController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-           return list[row]
-       }
+        return list[row]
+    }
 }

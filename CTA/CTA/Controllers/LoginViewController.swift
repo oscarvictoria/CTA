@@ -46,6 +46,8 @@ class LoginViewController: UIViewController {
         guard let apiController = storyboard?.instantiateViewController(identifier: "SelectAPIController") as? SelectAPIController else {
             fatalError("could not downcast to SelectAPIController")
         }
+        apiController.email = emailTextField.text ?? ""
+        apiController.password = passwordTextField.text ?? ""
         apiController.accountState = .existingUser
         apiController.modalPresentationStyle = .popover
 //        apiController.modalTransitionStyle = .crossDissolve
@@ -56,6 +58,8 @@ class LoginViewController: UIViewController {
         guard let apiController = storyboard?.instantiateViewController(identifier: "SelectAPIController") as? SelectAPIController else {
             fatalError("could not downcast to SelectAPIController")
         }
+        apiController.email = emailTextField.text ?? ""
+        apiController.password = passwordTextField.text ?? ""
         apiController.accountState = .newUser
         apiController.modalPresentationStyle = .popover
 //        apiController.modalTransitionStyle = .crossDissolve
