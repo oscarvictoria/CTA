@@ -27,6 +27,7 @@
 		BE50F78E242084E900672272 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78D242084E900672272 /* FeedViewController.swift */; };
 		BE50F79024215ABC00672272 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78F24215ABC00672272 /* UserSession.swift */; };
 		BE50F7922421630900672272 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7912421630900672272 /* User.swift */; };
+		BE50F79424217EC000672272 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79324217EC000672272 /* Switcher.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		BE50F78D242084E900672272 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BE50F78F24215ABC00672272 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
 		BE50F7912421630900672272 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BE50F79324217EC000672272 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				BE50F7682420393000672272 /* Events.swift */,
 				BE50F78124206AAE00672272 /* Objects.swift */,
 				BE50F7912421630900672272 /* User.swift */,
+				BE50F79324217EC000672272 /* Switcher.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
 				BE50F7692420393000672272 /* Events.swift in Sources */,
 				BE50F7922421630900672272 /* User.swift in Sources */,
+				BE50F79424217EC000672272 /* Switcher.swift in Sources */,
 				BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */,
 				BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */,
 				BE50F7792420684A00672272 /* UIViewController + Alerts.swift in Sources */,

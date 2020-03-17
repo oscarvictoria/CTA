@@ -9,6 +9,11 @@
 import UIKit
 import FirebaseAuth
 
+struct Keys {
+    static let ticketMaster = "ticketMaster"
+    static let museum = "museum"
+}
+
 class SelectAPIController: UIViewController {
     
     
@@ -22,9 +27,16 @@ class SelectAPIController: UIViewController {
     
     var accountState: AccountState = .existingUser
     
+    private var userAPI: UserAPI = .ticketMaster
+    
     private let list = ["ticketmaster", "Musuem"]
     
+    public var apiNumber = Int()
+    
     var listName: String!
+    
+    let defaults = UserDefaults.standard
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,34 +44,37 @@ class SelectAPIController: UIViewController {
         pickerView.delegate = self
         listName = list.first
         print("current account state is: \(accountState)")
-        
     }
     
     
     @IBAction func submitButtonPressed(_ sender: UIButton) {
         updateAPI()
-        sendAPI()
-        segueToMainView()
+        defaults.set(listName, forKey: Keys.ticketMaster)
+        if apiNumber == 0 {
+            UserDefaults.standard.set(true, forKey: "status")
+            Switcher.updateRootVC()
+        } else if apiNumber == 1 {
+            UserDefaults.standard.set(false, forKey: "status")
+            Switcher.updateRootVC()
+        }
     }
     
     func updateAPI() {
         databaseService.updateDatabaseUser(userAPI: listName) { (result) in
-             switch result {
-             case .failure(let error):
-                 print("error: \(error)")
-             case .success:
-                 print("succesfully updated user api")
-             }
-         }
+            switch result {
+            case .failure(let error):
+                print("error: \(error)")
+            case .success:
+                print("succesfully updated user api")
+            }
+        }
     }
     
     func segueToMainView() {
         UIViewController.showViewController(storyboardName: "MainView", viewControllerId: "MainTabBarController")
     }
     
-    func sendAPI() {
-       
-    }
+    
     
     
     
@@ -83,6 +98,15 @@ extension SelectAPIController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         listName = list[row]
         print(listName!)
+        userAPI = userAPI == .ticketMaster ? .museum : .ticketMaster
+        if listName == list[0] {
+            userAPI = .ticketMaster
+            apiNumber = 0
+        } else if listName == list[1] {
+            userAPI = .museum
+            apiNumber = 1
+        }
+        
     }
     
     

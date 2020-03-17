@@ -16,7 +16,7 @@ class FeedViewController: UIViewController {
     
     private var listener: ListenerRegistration?
     
-    
+   
     
     var apiName = String()
     
@@ -24,11 +24,17 @@ class FeedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("current api name is \(apiName)")
-        navigationItem.title = apiName
+        retrieve()
+//        print("current api name is \(apiName)")
+//        navigationItem.title = apiName
     }
 
-        
+    func retrieve() {
+        let ticketmaster = UserDefaults.standard.object(forKey: Keys.ticketMaster) as? String
+            navigationItem.title = ticketmaster
+//        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
+//        navigationItem.title = museum
+    }
     
     
     
