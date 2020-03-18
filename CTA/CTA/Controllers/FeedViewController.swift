@@ -40,13 +40,13 @@ class FeedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         retrieve()
+        getItems()
+        getEvents()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        getItems()
-        getEvents()
     }
     
     
@@ -107,7 +107,7 @@ extension FeedViewController: UITableViewDataSource {
         if navigationItem.title == "ticketmaster" {
             let events = event[indexPath.row]
             cell.textLabel?.text = events.name
-        } else {
+        } else if navigationItem.title == "Musuem" {
             let object = objects[indexPath.row]
             cell.textLabel?.text = object.title
         }
