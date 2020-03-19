@@ -126,6 +126,11 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailVC = ElementsDetailViewController()
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 
 extension FeedViewController: FavoriteCellDelegate {
