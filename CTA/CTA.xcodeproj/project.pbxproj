@@ -31,6 +31,8 @@
 		BE50F79624218D9400672272 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79524218D9400672272 /* FavoritesViewController.swift */; };
 		BE50F79824218DB000672272 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79724218DB000672272 /* SettingsViewController.swift */; };
 		BE50F79A24218ED100672272 /* ObjectsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79924218ED100672272 /* ObjectsAPIClient.swift */; };
+		BE50F79C2422D35100672272 /* ElementsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE50F79B2422D35100672272 /* ElementsCell.xib */; };
+		BE50F79E2422EA3000672272 /* UIimage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79D2422EA3000672272 /* UIimage + Extensions.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -78,6 +80,8 @@
 		BE50F79524218D9400672272 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BE50F79724218DB000672272 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BE50F79924218ED100672272 /* ObjectsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsAPIClient.swift; sourceTree = "<group>"; };
+		BE50F79B2422D35100672272 /* ElementsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementsCell.xib; sourceTree = "<group>"; };
+		BE50F79D2422EA3000672272 /* UIimage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimage + Extensions.swift"; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				BE50F78324206B2A00672272 /* ElementsCell.swift */,
+				BE50F79B2422D35100672272 /* ElementsCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -205,6 +210,7 @@
 			children = (
 				BE50F7762420680400672272 /* UIViewController + Navigation.swift */,
 				BE50F7782420684A00672272 /* UIViewController + Alerts.swift */,
+				BE50F79D2422EA3000672272 /* UIimage + Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -370,6 +376,7 @@
 				BEADAB26241FDCD80084F93C /* GoogleService-Info.plist in Resources */,
 				BE50F78A242080C900672272 /* MainView.storyboard in Resources */,
 				BEADAABA241C13090084F93C /* Assets.xcassets in Resources */,
+				BE50F79C2422D35100672272 /* ElementsCell.xib in Resources */,
 				BE50F76B2420394400672272 /* LoginView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -452,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE50F79E2422EA3000672272 /* UIimage + Extensions.swift in Sources */,
 				BE50F762242038C900672272 /* LoginViewController.swift in Sources */,
 				BE50F77D242068D800672272 /* AuthenticationSession.swift in Sources */,
 				BE50F79824218DB000672272 /* SettingsViewController.swift in Sources */,

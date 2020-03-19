@@ -59,6 +59,8 @@ class FeedViewController: UIViewController {
     
     private func configureTableView() {
         tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(UINib(nibName: "ElementsCell", bundle: nil), forCellReuseIdentifier: "elementsCell")
     }
     
     func getEvents() {
@@ -102,15 +104,23 @@ extension FeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "itemCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "elementsCell", for: indexPath) as? ElementsCell else {
+            fatalError("could not get cell")
+        }
         
         if navigationItem.title == "ticketmaster" {
             let events = event[indexPath.row]
-            cell.textLabel?.text = events.name
+            cell.configureEvent(for: events)
         } else if navigationItem.title == "Musuem" {
             let object = objects[indexPath.row]
-            cell.textLabel?.text = object.title
+            cell.configureObjects(for: object)
         }
         return cell
+    }
+}
+
+extension FeedViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 220
     }
 }

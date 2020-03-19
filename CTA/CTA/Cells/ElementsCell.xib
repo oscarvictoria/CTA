@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="elementsCell" rowHeight="233" id="iMF-3T-YFT" customClass="ElementsCell" customModule="CTA" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="490" height="233"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iMF-3T-YFT" id="sDM-a2-2Ed">
+                <rect key="frame" x="0.0" y="0.0" width="490" height="233"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGa-6R-l0C">
+                        <rect key="frame" x="236" y="45" width="246" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-Sg-DvW">
+                        <rect key="frame" x="236" y="126" width="55" height="30"/>
+                        <state key="normal" title="Favorite"/>
+                    </button>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="smN-Bb-7dT">
+                        <rect key="frame" x="8" y="9" width="220" height="215"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="220" id="nQ4-s4-0Vf"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mdn-Xk-KD1">
+                        <rect key="frame" x="236" y="85.5" width="226" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="smN-Bb-7dT" secondAttribute="bottom" constant="8" id="73m-x8-Y03"/>
+                    <constraint firstItem="smN-Bb-7dT" firstAttribute="leading" secondItem="sDM-a2-2Ed" secondAttribute="leading" constant="8" id="8gq-ec-0e8"/>
+                    <constraint firstItem="pGa-6R-l0C" firstAttribute="top" secondItem="sDM-a2-2Ed" secondAttribute="top" constant="45" id="EnS-kW-chc"/>
+                    <constraint firstItem="smN-Bb-7dT" firstAttribute="top" secondItem="sDM-a2-2Ed" secondAttribute="top" constant="8" id="J6u-FY-Vmc"/>
+                    <constraint firstItem="Mdn-Xk-KD1" firstAttribute="top" secondItem="pGa-6R-l0C" secondAttribute="bottom" constant="20" id="OmD-lB-fxy"/>
+                    <constraint firstItem="Lfe-Sg-DvW" firstAttribute="top" secondItem="Mdn-Xk-KD1" secondAttribute="bottom" constant="20" id="SfM-xn-NgR"/>
+                    <constraint firstAttribute="trailing" secondItem="pGa-6R-l0C" secondAttribute="trailing" constant="8" id="aiq-Ia-1L9"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Mdn-Xk-KD1" secondAttribute="trailing" constant="8" id="ept-FC-7LF"/>
+                    <constraint firstItem="Lfe-Sg-DvW" firstAttribute="leading" secondItem="smN-Bb-7dT" secondAttribute="trailing" constant="8" id="gdV-hu-jug"/>
+                    <constraint firstItem="Mdn-Xk-KD1" firstAttribute="leading" secondItem="smN-Bb-7dT" secondAttribute="trailing" constant="8" id="paR-W8-gZH"/>
+                    <constraint firstItem="pGa-6R-l0C" firstAttribute="leading" secondItem="smN-Bb-7dT" secondAttribute="trailing" constant="8" id="sD2-Z2-QYc"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="descriptionLabel" destination="Mdn-Xk-KD1" id="0JE-NA-JQF"/>
+                <outlet property="favoriteButton" destination="Lfe-Sg-DvW" id="ghJ-if-NYZ"/>
+                <outlet property="picture" destination="smN-Bb-7dT" id="fKq-fd-jNj"/>
+                <outlet property="titleLabel" destination="pGa-6R-l0C" id="HLs-aK-Xmz"/>
+            </connections>
+            <point key="canvasLocation" x="-24.637681159420293" y="55.245535714285715"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="photo" catalog="system" width="64" height="48"/>
+    </resources>
+</document>
