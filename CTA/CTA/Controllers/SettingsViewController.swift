@@ -39,7 +39,9 @@ class SettingsViewController: UIViewController {
             case .failure(let error):
                 print("error: \(error)")
             case .success:
-                print("succesfully updated user api")
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Switched to \(self.userAPI)", message: nil)
+                }
             }
         }
     }

@@ -20,8 +20,17 @@ struct Events: Codable {
     let type: String
     let id: String
     let images: [Pictures]
+    let dates: Dates
 }
 
 struct Pictures: Codable {
     let url: String
+}
+
+struct Dates: Codable {
+    let start: Times
+}
+
+struct Times: Codable {
+    let localDate: String
 }

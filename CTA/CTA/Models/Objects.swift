@@ -14,5 +14,9 @@ struct Items: Codable {
 
 struct Art: Codable {
     let title: String
-    
+    let webImage: Images
+}
+
+struct Images: Codable {
+    let url: String
 }
