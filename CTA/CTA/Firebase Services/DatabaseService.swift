@@ -16,6 +16,10 @@ class DatabaseService {
     
     static let usersCollection = "users"
     
+    static let favoriteEvents = "favoriteEvents"
+    
+    static let favoriteObjects = "favoriteObjects"
+    
     
     public func createDatabaseUser(authDataResult: AuthDataResult, completion: @escaping (Result <Bool, Error>)->()) {
         
@@ -48,5 +52,25 @@ class DatabaseService {
         
     }
     
+    public func addFavortiteEvents(event: Events, completion: @escaping (Result <Bool, Error>)->()) {
+        db.collection(DatabaseService.favoriteEvents).document(event.id).setData(["name" : event.name, "type": event.type, "id": event.id]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    
+    public func addFavoriteObjects(objects: Art, completion: @escaping (Result <Bool, Error>)->()) {
+        db.collection(DatabaseService.favoriteObjects).document(objects.id).setData(["id": objects.id, "title": objects.title, "webImageURL": objects.webImage.url]) { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
     
 }

@@ -85,6 +85,7 @@ class FeedViewController: UIViewController {
         }
     }
     
+  
     
     
     
@@ -110,9 +111,11 @@ extension FeedViewController: UITableViewDataSource {
         
         if navigationItem.title == "ticketmaster" {
             let events = event[indexPath.row]
+            cell.delegate = self
             cell.configureEvent(for: events)
         } else if navigationItem.title == "Musuem" {
             let object = objects[indexPath.row]
+            cell.objectDelegate = self
             cell.configureObjects(for: object)
         }
         return cell
@@ -123,4 +126,54 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 220
     }
+}
+
+extension FeedViewController: FavoriteCellDelegate {
+    func favoriteButtonPressed(_ elementsCell: ElementsCell) {
+        guard let indexPath = tableView.indexPath(for: elementsCell) else {
+            return
+        }
+        
+        let events = event[indexPath.row]
+//        print("button pressed at \(events.name)")
+        databaseService.addFavortiteEvents(event: events) { (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Could not favorite item", message: error.localizedDescription)
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Item added to favorites", message: nil)
+                }
+            }
+        }
+    }
+
+    
+}
+
+
+extension FeedViewController: FavoriteObjectDelegate {
+    func favoriteButton(_ elementCell: ElementsCell) {
+        
+        guard let indexPath = tableView.indexPath(for: elementCell) else {
+                return
+            }
+        let object = objects[indexPath.row]
+        databaseService.addFavoriteObjects(objects: object) { (result) in
+            switch result {
+            case .failure(let error):
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Could not add object to favorites", message: error.localizedDescription)
+                }
+            case .success:
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Object added to favorites", message: nil)
+                }
+            }
+        }
+    }
+    
+    
 }

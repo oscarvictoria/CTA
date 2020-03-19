@@ -9,9 +9,19 @@
 import UIKit
 import Kingfisher
 
+protocol FavoriteCellDelegate: AnyObject {
+    func favoriteButtonPressed(_ elementsCell: ElementsCell)
+}
+
+protocol FavoriteObjectDelegate: AnyObject {
+    func favoriteButton(_ elementCell: ElementsCell)
+}
+
 class ElementsCell: UITableViewCell {
     
+    var delegate: FavoriteCellDelegate?
     
+    var objectDelegate: FavoriteObjectDelegate?
     
     @IBOutlet weak var picture: UIImageView!
     
@@ -23,7 +33,10 @@ class ElementsCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     
-    @IBOutlet weak var favoriteButton: UIButton!
+  
+    
+    
+
     
     
     public func configureEvent(for event: Events) {
@@ -44,5 +57,12 @@ class ElementsCell: UITableViewCell {
         titleLabel.text = object.title
         descriptionLabel.text = ""
     }
-
+    
+    
+    
+    @IBAction func favoriteButtonPressed(_ sender: UIButton) {
+        delegate?.favoriteButtonPressed(self)
+        objectDelegate?.favoriteButton(self)
+    }
+    
 }
