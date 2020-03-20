@@ -33,17 +33,17 @@ class ElementsCell: UITableViewCell {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     
-  
     
     
-
+    
+    
     
     
     public func configureEvent(for event: Events) {
         let imageURL = event.images.map {$0.url}.first
         guard let eventImage = URL(string: imageURL ?? "") else {
-                   return
-               }
+            return
+        }
         picture.kf.setImage(with: eventImage)
         titleLabel.text = event.name
         descriptionLabel.text = event.dates.start.localDate
@@ -51,8 +51,27 @@ class ElementsCell: UITableViewCell {
     
     public func configureObjects(for object: Art) {
         guard let objectImage = URL(string: object.webImage.url ) else {
-                         return
-                     }
+            return
+        }
+        picture.kf.setImage(with: objectImage)
+        titleLabel.text = object.title
+        descriptionLabel.text = ""
+    }
+    
+    public func configureFavoriteEvents(for event: FavoriteEvents) {
+        guard let eventImage = URL(string: event.imageURL) else {
+            return
+        }
+        picture.kf.setImage(with: eventImage)
+        titleLabel.text = event.name
+        descriptionLabel.text = event.date
+    }
+    
+    public func configureFavoriteObject(for object: FavoriteObjects) {
+        guard let objectImage = URL(string: object.webImageURL ) else {
+            return
+        }
+        
         picture.kf.setImage(with: objectImage)
         titleLabel.text = object.title
         descriptionLabel.text = ""

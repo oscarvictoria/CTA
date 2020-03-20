@@ -17,7 +17,6 @@ class FeedViewController: UIViewController {
     
     private var databaseService = DatabaseService()
     
-    private var listener: ListenerRegistration?
     
     var apiName = String()
     
@@ -40,21 +39,21 @@ class FeedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         retrieve()
+        configureTableView()
         getItems()
         getEvents()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        configureTableView()
     }
     
     
     func retrieve() {
         let ticketmaster = UserDefaults.standard.object(forKey: Keys.ticketMaster) as? String
         navigationItem.title = ticketmaster
-        //        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
-        //        navigationItem.title = museum
+//        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
+//        navigationItem.title = museum
     }
     
     private func configureTableView() {
@@ -85,7 +84,7 @@ class FeedViewController: UIViewController {
         }
     }
     
-  
+    
     
     
     
@@ -96,10 +95,10 @@ class FeedViewController: UIViewController {
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if navigationItem.title == "ticketmaster" {
-//             print("current api is ticketmaster and the count is \(event.count)")
+            //             print("current api is ticketmaster and the count is \(event.count)")
             return event.count
         } else {
-//             print("current api is museum and the count is \(objects.count)")
+            //             print("current api is museum and the count is \(objects.count)")
             return objects.count
         }
     }
@@ -140,7 +139,7 @@ extension FeedViewController: FavoriteCellDelegate {
         }
         
         let events = event[indexPath.row]
-//        print("button pressed at \(events.name)")
+        //        print("button pressed at \(events.name)")
         databaseService.addFavortiteEvents(event: events) { (result) in
             switch result {
             case .failure(let error):
@@ -154,7 +153,7 @@ extension FeedViewController: FavoriteCellDelegate {
             }
         }
     }
-
+    
     
 }
 
@@ -163,8 +162,8 @@ extension FeedViewController: FavoriteObjectDelegate {
     func favoriteButton(_ elementCell: ElementsCell) {
         
         guard let indexPath = tableView.indexPath(for: elementCell) else {
-                return
-            }
+            return
+        }
         let object = objects[indexPath.row]
         databaseService.addFavoriteObjects(objects: object) { (result) in
             switch result {
