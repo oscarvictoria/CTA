@@ -14,9 +14,17 @@ class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    
     private var databaseService = DatabaseService()
     
+    private var isFavorite = false {
+        didSet {
+            if isFavorite {
+                
+            } else {
+                
+            }
+        }
+    }
     
     var apiName = String()
     
@@ -52,8 +60,8 @@ class FeedViewController: UIViewController {
     func retrieve() {
         let ticketmaster = UserDefaults.standard.object(forKey: Keys.ticketMaster) as? String
         navigationItem.title = ticketmaster
-//        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
-//        navigationItem.title = museum
+        //        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
+        //        navigationItem.title = museum
     }
     
     private func configureTableView() {
@@ -84,13 +92,36 @@ class FeedViewController: UIViewController {
         }
     }
     
+    func setUI(for cell: ElementsCell, for events: Events) {
+        databaseService.isEventInFavorites(for: events) { (result) in
+            switch result {
+            case .failure(let error):
+                print("error \(error)")
+            case .success(let success):
+                if success {
+                    cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                } else {
+                    cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            }
+        }
+    }
     
-    
-    
-    
-    
+    func setUIObjects(for cell: ElementsCell, for object: Art) {
+        databaseService.isObjectInFavorites(for: object) { (result) in
+            switch result {
+            case .failure(let error):
+                print("error \(error)")
+            case .success(let success):
+                if success {
+                    cell.favoriteButton.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                } else {
+                    cell.favoriteButton.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            }
+        }
+    }
 }
-
 
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,10 +143,13 @@ extension FeedViewController: UITableViewDataSource {
             let events = event[indexPath.row]
             cell.delegate = self
             cell.configureEvent(for: events)
+            setUI(for: cell, for: events)
+            
         } else if navigationItem.title == "Musuem" {
             let object = objects[indexPath.row]
             cell.objectDelegate = self
             cell.configureObjects(for: object)
+            setUIObjects(for: cell, for: object)
         }
         return cell
     }
@@ -139,24 +173,42 @@ extension FeedViewController: FavoriteCellDelegate {
         }
         
         let events = event[indexPath.row]
-        //        print("button pressed at \(events.name)")
-        databaseService.addFavortiteEvents(event: events) { (result) in
+        
+        databaseService.isEventInFavorites(for: events) { (result) in
             switch result {
             case .failure(let error):
-                DispatchQueue.main.async {
-                    self.showAlert(title: "Could not favorite item", message: error.localizedDescription)
-                }
-            case .success:
-                DispatchQueue.main.async {
-                    self.showAlert(title: "Item added to favorites", message: nil)
+                print("error \(error)")
+            case .success(let success):
+                if success {
+                    self.databaseService.removeEvent(for: events) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            print("error \(error)")
+                        case .success:
+                            DispatchQueue.main.async {
+                                self.showAlert(title: "Item removed from favorites", message: nil)
+                            }
+                        }
+                    }
+                } else {
+                    self.databaseService.addFavortiteEvents(event: events) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            DispatchQueue.main.async {
+                                self.showAlert(title: "Could not favorite item", message: error.localizedDescription)
+                            }
+                        case .success:
+                            DispatchQueue.main.async {
+                                self.showAlert(title: "Item added to favorites", message: nil)
+                            }
+                        }
+                    }
                 }
             }
         }
     }
     
-    
 }
-
 
 extension FeedViewController: FavoriteObjectDelegate {
     func favoriteButton(_ elementCell: ElementsCell) {
@@ -165,19 +217,38 @@ extension FeedViewController: FavoriteObjectDelegate {
             return
         }
         let object = objects[indexPath.row]
-        databaseService.addFavoriteObjects(objects: object) { (result) in
+        
+        databaseService.isObjectInFavorites(for: object) { (result) in
             switch result {
             case .failure(let error):
-                DispatchQueue.main.async {
-                    self.showAlert(title: "Could not add object to favorites", message: error.localizedDescription)
-                }
-            case .success:
-                DispatchQueue.main.async {
-                    self.showAlert(title: "Object added to favorites", message: nil)
+                print("error \(error)")
+            case .success(let success):
+                if success {
+                    self.databaseService.removeObject(for: object) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            print("could not remove item \(error)")
+                        case .success:
+                            DispatchQueue.main.async {
+                                self.showAlert(title: "Item removed from favorties", message: nil)
+                            }
+                        }
+                    }
+                } else {
+                    self.databaseService.addFavoriteObjects(objects: object) { (result) in
+                        switch result {
+                        case .failure(let error):
+                            DispatchQueue.main.async {
+                                self.showAlert(title: "Could not add object to favorites", message: error.localizedDescription)
+                            }
+                        case .success:
+                            DispatchQueue.main.async {
+                                self.showAlert(title: "Object added to favorites", message: nil)
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-    
-    
 }

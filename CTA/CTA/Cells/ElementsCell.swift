@@ -34,6 +34,7 @@ class ElementsCell: UITableViewCell {
     
     
     
+    @IBOutlet weak var favoriteButton: UIButton!
     
     
     
@@ -47,6 +48,7 @@ class ElementsCell: UITableViewCell {
         picture.kf.setImage(with: eventImage)
         titleLabel.text = event.name
         descriptionLabel.text = event.dates.start.localDate
+        
     }
     
     public func configureObjects(for object: Art) {

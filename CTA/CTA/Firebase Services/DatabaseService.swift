@@ -24,8 +24,8 @@ class DatabaseService {
     public func createDatabaseUser(authDataResult: AuthDataResult, completion: @escaping (Result <Bool, Error>)->()) {
         
         guard let email = authDataResult.user.email else {
-                  return
-              }
+            return
+        }
         db.collection(DatabaseService.usersCollection).document(authDataResult.user.uid).setData(["email" : email, "createdDate": Timestamp(date: Date()), "userId": authDataResult.user.uid]) { (error) in
             if let error = error {
                 completion(.failure(error))
@@ -39,8 +39,8 @@ class DatabaseService {
     public func updateDatabaseUser(userAPI: String, completion: @escaping (Result <Bool, Error>)->()) {
         
         guard let user = Auth.auth().currentUser else {
-                 return
-             }
+            return
+        }
         
         db.collection(DatabaseService.usersCollection).document(user.uid).updateData(["userAPI" : userAPI]) { (error) in
             if let error = error {
@@ -73,7 +73,7 @@ class DatabaseService {
             }
         }
     }
- 
+    
     public func fetchFavoriteEvents(completion: @escaping (Result <[FavoriteEvents], Error>)->()) {
         db.collection(DatabaseService.favoriteEvents).getDocuments { (snapShot, error) in
             if let error = error {
@@ -96,6 +96,57 @@ class DatabaseService {
         }
     }
     
-
+    public func removeEvent(for event: Events, completion: @escaping (Result <Bool, Error>)->()) {
+        db.collection(DatabaseService.favoriteEvents).document(event.id).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    public func removeObject(for object: Art, completion: @escaping (Result <Bool, Error>)->()) {
+        db.collection(DatabaseService.favoriteObjects).document(object.id).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
+    public func isEventInFavorites(for event: Events, completion: @escaping (Result <Bool, Error>)->()) {
+        
+        db.collection(DatabaseService.favoriteEvents).whereField("id", isEqualTo: event.id).getDocuments { (snapShot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapShot = snapShot {
+                let count = snapShot.documents.count
+                if count > 0 {
+                    completion(.success(true))
+                } else {
+                    completion(.success(false))
+                }
+            }
+        }
+    }
+    
+    public func isObjectInFavorites(for object: Art, completion: @escaping (Result <Bool, Error>)->()) {
+        
+        db.collection(DatabaseService.favoriteObjects).whereField("id", isEqualTo: object.id).getDocuments { (snapShot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapShot = snapShot {
+                let count = snapShot.documents.count
+                if count > 0 {
+                    completion(.success(true))
+                } else {
+                    completion(.success(false))
+                }
+            }
+        }
+    }
+    
     
 }

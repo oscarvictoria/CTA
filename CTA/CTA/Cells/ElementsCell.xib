@@ -21,13 +21,6 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-Sg-DvW">
-                        <rect key="frame" x="236" y="126" width="55" height="30"/>
-                        <state key="normal" title="Favorite"/>
-                        <connections>
-                            <action selector="favoriteButtonPressed:" destination="iMF-3T-YFT" eventType="touchUpInside" id="SOb-Vt-iSj"/>
-                        </connections>
-                    </button>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="smN-Bb-7dT">
                         <rect key="frame" x="8" y="9" width="220" height="215"/>
                         <constraints>
@@ -40,6 +33,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-Sg-DvW">
+                        <rect key="frame" x="230" y="118" width="77" height="70"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <connections>
+                            <action selector="favoriteButtonPressed:" destination="iMF-3T-YFT" eventType="touchUpInside" id="SOb-Vt-iSj"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="smN-Bb-7dT" secondAttribute="bottom" constant="8" id="73m-x8-Y03"/>
@@ -47,16 +47,15 @@
                     <constraint firstItem="pGa-6R-l0C" firstAttribute="top" secondItem="sDM-a2-2Ed" secondAttribute="top" constant="45" id="EnS-kW-chc"/>
                     <constraint firstItem="smN-Bb-7dT" firstAttribute="top" secondItem="sDM-a2-2Ed" secondAttribute="top" constant="8" id="J6u-FY-Vmc"/>
                     <constraint firstItem="Mdn-Xk-KD1" firstAttribute="top" secondItem="pGa-6R-l0C" secondAttribute="bottom" constant="20" id="OmD-lB-fxy"/>
-                    <constraint firstItem="Lfe-Sg-DvW" firstAttribute="top" secondItem="Mdn-Xk-KD1" secondAttribute="bottom" constant="20" id="SfM-xn-NgR"/>
                     <constraint firstAttribute="trailing" secondItem="pGa-6R-l0C" secondAttribute="trailing" constant="8" id="aiq-Ia-1L9"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Mdn-Xk-KD1" secondAttribute="trailing" constant="8" id="ept-FC-7LF"/>
-                    <constraint firstItem="Lfe-Sg-DvW" firstAttribute="leading" secondItem="smN-Bb-7dT" secondAttribute="trailing" constant="8" id="gdV-hu-jug"/>
                     <constraint firstItem="Mdn-Xk-KD1" firstAttribute="leading" secondItem="smN-Bb-7dT" secondAttribute="trailing" constant="8" id="paR-W8-gZH"/>
                     <constraint firstItem="pGa-6R-l0C" firstAttribute="leading" secondItem="smN-Bb-7dT" secondAttribute="trailing" constant="8" id="sD2-Z2-QYc"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="descriptionLabel" destination="Mdn-Xk-KD1" id="0JE-NA-JQF"/>
+                <outlet property="favoriteButton" destination="Lfe-Sg-DvW" id="lzo-j7-nbC"/>
                 <outlet property="picture" destination="smN-Bb-7dT" id="fKq-fd-jNj"/>
                 <outlet property="titleLabel" destination="pGa-6R-l0C" id="HLs-aK-Xmz"/>
             </connections>
