@@ -11,7 +11,7 @@ import NetworkHelper
 
 struct ObjectsAPIClient {
     static func getItems(completion: @escaping (Result <[Art], AppError>)->()) {
-        let endpointURLString = "https://www.rijksmuseum.nl/api/nl/collection?key=m9537BQo&q=animals"
+        let endpointURLString = "https://www.rijksmuseum.nl/api/nl/collection?key=\(APIKeys.objectKey)&q=animals"
               
               guard let url = URL(string: endpointURLString) else {
                   completion(.failure(.badURL(endpointURLString)))

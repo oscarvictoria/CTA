@@ -10,7 +10,7 @@ import UIKit
 
 class DetailView: UIView {
     
-    
+//    Detail should display image, description, title, and favorite button
     
     override init(frame: CGRect) {
         super.init(frame: UIScreen.main.bounds)

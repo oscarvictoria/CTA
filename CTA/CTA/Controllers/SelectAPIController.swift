@@ -43,7 +43,7 @@ class SelectAPIController: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         listName = list.first
-        print("current account state is: \(accountState)")
+//        print("current account state is: \(accountState)")
     }
     
     

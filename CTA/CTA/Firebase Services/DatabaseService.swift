@@ -53,7 +53,8 @@ class DatabaseService {
     }
     
     public func addFavortiteEvents(event: Events, completion: @escaping (Result <Bool, Error>)->()) {
-        db.collection(DatabaseService.favoriteEvents).document(event.id).setData(["name" : event.name, "type": event.type, "id": event.id]) { (error) in
+        
+        db.collection(DatabaseService.favoriteEvents).document(event.id).setData(["name" : event.name, "type": event.type, "id": event.id, "imageURL": event.images.map {$0.url}.first!, "date": event.dates.start.localDate]) { (error) in
             if let error = error {
                 completion(.failure(error))
             } else {
@@ -72,5 +73,29 @@ class DatabaseService {
             }
         }
     }
+ 
+    public func fetchFavoriteEvents(completion: @escaping (Result <[FavoriteEvents], Error>)->()) {
+        db.collection(DatabaseService.favoriteEvents).getDocuments { (snapShot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapShot = snapShot {
+                let favorites = snapShot.documents.compactMap {FavoriteEvents($0.data())}
+                completion(.success(favorites))
+            }
+        }
+    }
+    
+    public func fetchFavoriteObjects(completion: @escaping (Result <[FavoriteObjects], Error>)->()) {
+        db.collection(DatabaseService.favoriteObjects).getDocuments { (snapShot, error) in
+            if let error = error {
+                completion(.failure(error))
+            } else if let snapShot = snapShot {
+                let favorties = snapShot.documents.compactMap {FavoriteObjects($0.data())}
+                completion(.success(favorties))
+            }
+        }
+    }
+    
+
     
 }

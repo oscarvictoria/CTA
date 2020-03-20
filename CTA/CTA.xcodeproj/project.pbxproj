@@ -26,7 +26,6 @@
 		BE50F78C242080F700672272 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78B242080F700672272 /* MainTabBarController.swift */; };
 		BE50F78E242084E900672272 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78D242084E900672272 /* FeedViewController.swift */; };
 		BE50F79024215ABC00672272 /* UserSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F78F24215ABC00672272 /* UserSession.swift */; };
-		BE50F7922421630900672272 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F7912421630900672272 /* User.swift */; };
 		BE50F79424217EC000672272 /* Switcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79324217EC000672272 /* Switcher.swift */; };
 		BE50F79624218D9400672272 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79524218D9400672272 /* FavoritesViewController.swift */; };
 		BE50F79824218DB000672272 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79724218DB000672272 /* SettingsViewController.swift */; };
@@ -34,6 +33,8 @@
 		BE50F79C2422D35100672272 /* ElementsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE50F79B2422D35100672272 /* ElementsCell.xib */; };
 		BE50F79E2422EA3000672272 /* UIimage + Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79D2422EA3000672272 /* UIimage + Extensions.swift */; };
 		BE50F7A02423196A00672272 /* ElementsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79F2423196A00672272 /* ElementsDetailViewController.swift */; };
+		BE6488242424382C006DDCCA /* FavoriteEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6488232424382C006DDCCA /* FavoriteEvents.swift */; };
+		BE64882624244A2A006DDCCA /* FavoriteObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE64882524244A2A006DDCCA /* FavoriteObjects.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -76,7 +77,6 @@
 		BE50F78B242080F700672272 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		BE50F78D242084E900672272 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		BE50F78F24215ABC00672272 /* UserSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSession.swift; sourceTree = "<group>"; };
-		BE50F7912421630900672272 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BE50F79324217EC000672272 /* Switcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Switcher.swift; sourceTree = "<group>"; };
 		BE50F79524218D9400672272 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		BE50F79724218DB000672272 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +84,8 @@
 		BE50F79B2422D35100672272 /* ElementsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementsCell.xib; sourceTree = "<group>"; };
 		BE50F79D2422EA3000672272 /* UIimage + Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIimage + Extensions.swift"; sourceTree = "<group>"; };
 		BE50F79F2423196A00672272 /* ElementsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsDetailViewController.swift; sourceTree = "<group>"; };
+		BE6488232424382C006DDCCA /* FavoriteEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEvents.swift; sourceTree = "<group>"; };
+		BE64882524244A2A006DDCCA /* FavoriteObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteObjects.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -152,8 +154,9 @@
 			children = (
 				BE50F7682420393000672272 /* Events.swift */,
 				BE50F78124206AAE00672272 /* Objects.swift */,
-				BE50F7912421630900672272 /* User.swift */,
 				BE50F79324217EC000672272 /* Switcher.swift */,
+				BE6488232424382C006DDCCA /* FavoriteEvents.swift */,
+				BE64882524244A2A006DDCCA /* FavoriteObjects.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,8 +482,9 @@
 				BE50F788242079AD00672272 /* DatabaseService.swift in Sources */,
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
 				BE50F7692420393000672272 /* Events.swift in Sources */,
-				BE50F7922421630900672272 /* User.swift in Sources */,
+				BE6488242424382C006DDCCA /* FavoriteEvents.swift in Sources */,
 				BE50F79424217EC000672272 /* Switcher.swift in Sources */,
+				BE64882624244A2A006DDCCA /* FavoriteObjects.swift in Sources */,
 				BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */,
 				BE50F7A02423196A00672272 /* ElementsDetailViewController.swift in Sources */,
 				BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */,

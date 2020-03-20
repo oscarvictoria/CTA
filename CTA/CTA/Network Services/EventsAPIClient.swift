@@ -15,7 +15,7 @@ struct EventsAPIClient {
          let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "event"
         
         
-        let endpointURLString = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=OzFgcxFTUmImDwbr5koSoyEF5TxBzwAa&city=\(searchQuery)"
+        let endpointURLString = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=\(APIKeys.eventKey)&city=\(searchQuery)"
         
         
         guard let url = URL(string: endpointURLString) else {

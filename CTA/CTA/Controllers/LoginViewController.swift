@@ -103,7 +103,7 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        print("login button pressed")
+//        print("login button pressed")
         continueLoginFlow(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
