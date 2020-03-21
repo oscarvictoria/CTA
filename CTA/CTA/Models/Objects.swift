@@ -21,3 +21,5 @@ struct Art: Codable {
 struct Images: Codable {
     let url: String
 }
+
+

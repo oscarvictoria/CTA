@@ -19,7 +19,6 @@ class SelectAPIController: UIViewController {
     
     @IBOutlet weak var pickerView: UIPickerView!
     
-    var userSession = UserSession()
     
     private var authSession = AuthenticationSession()
     
@@ -43,7 +42,6 @@ class SelectAPIController: UIViewController {
         pickerView.dataSource = self
         pickerView.delegate = self
         listName = list.first
-//        print("current account state is: \(accountState)")
     }
     
     

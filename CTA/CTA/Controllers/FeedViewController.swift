@@ -50,9 +50,6 @@ class FeedViewController: UIViewController {
         super.viewDidAppear(true)
         retrieve()
         configureTableView()
-//        getItems()
-//        getEvents()
-        
     }
     
     override func viewDidLoad() {
@@ -60,13 +57,9 @@ class FeedViewController: UIViewController {
         searchBar.delegate = self
     }
     
-  
-    
     func retrieve() {
         let ticketmaster = UserDefaults.standard.object(forKey: Keys.ticketMaster) as? String
         navigationItem.title = ticketmaster
-        //        let museum = UserDefaults.standard.object(forKey: Keys.museum) as? String
-        //        navigationItem.title = museum
     }
     
     private func configureTableView() {
@@ -75,27 +68,6 @@ class FeedViewController: UIViewController {
         tableView.register(UINib(nibName: "ElementsCell", bundle: nil), forCellReuseIdentifier: "elementsCell")
     }
     
-//    func getEvents() {
-//        EventsAPIClient.getEvents(searchQuery: "Seattle") { (result) in
-//            switch result {
-//            case .failure(let appError):
-//                print("app error \(appError)")
-//            case .success(let event):
-//                self.event = event
-//            }
-//        }
-//    }
-    
-//    func getItems() {
-//        ObjectsAPIClient.getItems { (result) in
-//            switch result {
-//            case .failure(let appError):
-//                print("app error: \(appError)")
-//            case .success(let art):
-//                self.objects = art
-//            }
-//        }
-//    }
     
     func setUI(for cell: ElementsCell, for events: Events) {
         databaseService.isEventInFavorites(for: events) { (result) in

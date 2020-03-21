@@ -14,7 +14,6 @@ class Switcher {
         let status = UserDefaults.standard.bool(forKey: "status")
         var rootVC : UIViewController?
         
-        print(status)
         
         
         if(status == true){

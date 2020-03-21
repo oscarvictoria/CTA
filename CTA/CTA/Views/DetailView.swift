@@ -10,8 +10,6 @@ import UIKit
 
 class DetailView: UIView {
     
-//    Detail should display image, description, title, and favorite button
-    
     public lazy var picture: UIImageView = {
         let picture = UIImageView()
         picture.image = UIImage(systemName: "photo")

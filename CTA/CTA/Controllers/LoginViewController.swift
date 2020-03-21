@@ -63,7 +63,7 @@ class LoginViewController: UIViewController {
         }
     }
     
-    //
+    
     private func createDatabaseUser(authDataResult: AuthDataResult) {
         databaseService.createDatabaseUser(authDataResult: authDataResult) { (result) in
             switch result {
@@ -103,19 +103,14 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-//        print("login button pressed")
         continueLoginFlow(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
     
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
-        print("create account button pressed")
         accountState = accountState == .existingUser ? .newUser : .existingUser
         continueLoginFlow(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
-    
-    
-    
     
 }

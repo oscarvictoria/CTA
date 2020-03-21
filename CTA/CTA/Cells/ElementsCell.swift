@@ -48,10 +48,6 @@ class ElementsCell: UITableViewCell {
     
     @IBOutlet weak var favoriteButton: UIButton!
     
-    
-    
-    
-    
     public func configureEvent(for event: Events) {
         let imageURL = event.images.map {$0.url}.first
         guard let eventImage = URL(string: imageURL ?? "") else {

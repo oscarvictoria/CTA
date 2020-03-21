@@ -90,10 +90,8 @@ class FavoritesViewController: UIViewController {
 extension FavoritesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if navigationItem.title == "ticketmaster" {
-              //             print("current api is ticketmaster and the count is \(event.count)")
               return event.count
           } else {
-              //             print("current api is museum and the count is \(objects.count)")
               return objects.count
           }
     }

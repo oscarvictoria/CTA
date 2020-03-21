@@ -29,6 +29,7 @@ class SettingsViewController: UIViewController {
         super.viewDidLoad()
         pickerView.dataSource = self
         pickerView.delegate = self
+        listName = list.first
     }
     
     private let list = ["ticketmaster", "Musuem"]
