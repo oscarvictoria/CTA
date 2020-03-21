@@ -34,6 +34,7 @@
 		BE50F7A02423196A00672272 /* ElementsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE50F79F2423196A00672272 /* ElementsDetailViewController.swift */; };
 		BE6488242424382C006DDCCA /* FavoriteEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6488232424382C006DDCCA /* FavoriteEvents.swift */; };
 		BE64882624244A2A006DDCCA /* FavoriteObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE64882524244A2A006DDCCA /* FavoriteObjects.swift */; };
+		BE6488282425CC70006DDCCA /* ObjectsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6488272425CC70006DDCCA /* ObjectsDetail.swift */; };
 		BEADAAB1241C13070084F93C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB0241C13070084F93C /* AppDelegate.swift */; };
 		BEADAAB3241C13070084F93C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEADAAB2241C13070084F93C /* SceneDelegate.swift */; };
 		BEADAABA241C13090084F93C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BEADAAB9241C13090084F93C /* Assets.xcassets */; };
@@ -84,6 +85,7 @@
 		BE50F79F2423196A00672272 /* ElementsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementsDetailViewController.swift; sourceTree = "<group>"; };
 		BE6488232424382C006DDCCA /* FavoriteEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteEvents.swift; sourceTree = "<group>"; };
 		BE64882524244A2A006DDCCA /* FavoriteObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteObjects.swift; sourceTree = "<group>"; };
+		BE6488272425CC70006DDCCA /* ObjectsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectsDetail.swift; sourceTree = "<group>"; };
 		BEADAAAD241C13070084F93C /* CTA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEADAAB0241C13070084F93C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BEADAAB2241C13070084F93C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				BE50F79324217EC000672272 /* Switcher.swift */,
 				BE6488232424382C006DDCCA /* FavoriteEvents.swift */,
 				BE64882524244A2A006DDCCA /* FavoriteObjects.swift */,
+				BE6488272425CC70006DDCCA /* ObjectsDetail.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -479,6 +482,7 @@
 				BE50F76D2420395D00672272 /* EventsAPIClient.swift in Sources */,
 				BE50F7692420393000672272 /* Events.swift in Sources */,
 				BE6488242424382C006DDCCA /* FavoriteEvents.swift in Sources */,
+				BE6488282425CC70006DDCCA /* ObjectsDetail.swift in Sources */,
 				BE50F79424217EC000672272 /* Switcher.swift in Sources */,
 				BE64882624244A2A006DDCCA /* FavoriteObjects.swift in Sources */,
 				BE50F7772420680400672272 /* UIViewController + Navigation.swift in Sources */,

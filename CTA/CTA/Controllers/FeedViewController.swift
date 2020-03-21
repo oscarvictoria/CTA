@@ -49,12 +49,23 @@ class FeedViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         retrieve()
+        configureSearchBar()
         configureTableView()
+        getEvents()
+        getObjects()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    func configureSearchBar() {
         searchBar.delegate = self
+        if navigationItem.title == "ticketmaster" {
+            searchBar.placeholder = "Seattle"
+        } else {
+            searchBar.placeholder = "water"
+        }
     }
     
     func retrieve() {
@@ -66,6 +77,28 @@ class FeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "ElementsCell", bundle: nil), forCellReuseIdentifier: "elementsCell")
+    }
+    
+    func getEvents() {
+        EventsAPIClient.getEvents(searchQuery: "Seattle") { (result) in
+            switch result {
+            case .failure(let appError):
+                print("app error \(appError)")
+            case .success(let events):
+                self.event = events
+            }
+        }
+    }
+    
+    func getObjects() {
+        ObjectsAPIClient.getItems(searchQuery: "water") { (result) in
+            switch result {
+            case .failure(let appError):
+                print("app error \(appError)")
+            case .success(let objects):
+                self.objects = objects
+            }
+        }
     }
     
     
@@ -258,7 +291,6 @@ extension FeedViewController: UISearchBarDelegate {
                     self.objects = objects
                 }
             }
-            
         }
         searchBar.resignFirstResponder()
     }

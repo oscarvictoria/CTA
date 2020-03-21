@@ -21,6 +21,7 @@ class DetailView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "Description Label"
+        label.numberOfLines = 0
         return label
     }()
     
@@ -28,6 +29,7 @@ class DetailView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.text = "Title Label"
+        label.numberOfLines = 0
         return label
     }()
     

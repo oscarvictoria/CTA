@@ -18,6 +18,7 @@ class ElementsDetailViewController: UIViewController {
     
     var objects: Art?
     
+    
     override func loadView() {
         view = detailView
     }
@@ -73,6 +74,8 @@ class ElementsDetailViewController: UIViewController {
         
         detailView.picture.kf.setImage(with: objectImage)
         detailView.titleLabel.text = object.title
-        detailView.descriptionLabel.text = object.id
+        detailView.descriptionLabel.text = ""
     }
+    
+
 }

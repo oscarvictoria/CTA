@@ -39,4 +39,29 @@ struct ObjectsAPIClient {
                   }
               }
           }
+    
+    static func getDetails(objectID: String,completion: @escaping (Result <ObjectsDetail, AppError>)->()) {
+        let endpointURLString = "https://www.rijksmuseum.nl/api/nl/collection/\(objectID)?key=\(APIKeys.objectKey)&culture=nl / en"
+        
+        guard let url = URL(string: endpointURLString) else {
+                 completion(.failure(.badURL(endpointURLString)))
+                 return
+             }
+             
+             let request = URLRequest(url: url)
+             
+             NetworkHelper.shared.performDataTask(with: request) { (result) in
+                 switch result {
+                 case .failure(let appError):
+                     completion(.failure(.networkClientError(appError)))
+                 case .success(let data):
+                     do {
+                         let items = try JSONDecoder().decode(ObjectsDetail.self, from: data)
+                        completion(.success(items))
+                     } catch {
+                         completion(.failure(.decodingError(error)))
+                     }
+                 }
+             }
+    }
 }
