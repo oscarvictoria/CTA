@@ -13,6 +13,8 @@ import FirebaseFirestore
 class FeedViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    
     
     private var databaseService = DatabaseService()
     
@@ -48,14 +50,17 @@ class FeedViewController: UIViewController {
         super.viewDidAppear(true)
         retrieve()
         configureTableView()
-        getItems()
-        getEvents()
+//        getItems()
+//        getEvents()
+        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
     }
     
+  
     
     func retrieve() {
         let ticketmaster = UserDefaults.standard.object(forKey: Keys.ticketMaster) as? String
@@ -70,27 +75,27 @@ class FeedViewController: UIViewController {
         tableView.register(UINib(nibName: "ElementsCell", bundle: nil), forCellReuseIdentifier: "elementsCell")
     }
     
-    func getEvents() {
-        EventsAPIClient.getEvents(searchQuery: "Seattle") { (result) in
-            switch result {
-            case .failure(let appError):
-                print("app error \(appError)")
-            case .success(let event):
-                self.event = event
-            }
-        }
-    }
+//    func getEvents() {
+//        EventsAPIClient.getEvents(searchQuery: "Seattle") { (result) in
+//            switch result {
+//            case .failure(let appError):
+//                print("app error \(appError)")
+//            case .success(let event):
+//                self.event = event
+//            }
+//        }
+//    }
     
-    func getItems() {
-        ObjectsAPIClient.getItems { (result) in
-            switch result {
-            case .failure(let appError):
-                print("app error: \(appError)")
-            case .success(let art):
-                self.objects = art
-            }
-        }
-    }
+//    func getItems() {
+//        ObjectsAPIClient.getItems { (result) in
+//            switch result {
+//            case .failure(let appError):
+//                print("app error: \(appError)")
+//            case .success(let art):
+//                self.objects = art
+//            }
+//        }
+//    }
     
     func setUI(for cell: ElementsCell, for events: Events) {
         databaseService.isEventInFavorites(for: events) { (result) in
@@ -259,4 +264,32 @@ extension FeedViewController: FavoriteObjectDelegate {
             }
         }
     }
+}
+
+extension FeedViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if navigationItem.title == "ticketmaster" {
+            EventsAPIClient.getEvents(searchQuery: searchBar.text ?? "") { (result) in
+                     switch result {
+                     case .failure(let appError):
+                         print("app error \(appError)")
+                     case .success(let event):
+                         self.event = event
+                     }
+                 }
+        } else {
+            ObjectsAPIClient.getItems(searchQuery: searchBar.text ?? "") { (result) in
+                switch result {
+                case .failure(let appError):
+                    print("app error \(appError)")
+                case .success(let objects):
+                    self.objects = objects
+                }
+            }
+            
+        }
+        searchBar.resignFirstResponder()
+    }
+    
+    
 }

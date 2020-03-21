@@ -10,8 +10,11 @@ import Foundation
 import NetworkHelper
 
 struct ObjectsAPIClient {
-    static func getItems(completion: @escaping (Result <[Art], AppError>)->()) {
-        let endpointURLString = "https://www.rijksmuseum.nl/api/nl/collection?key=\(APIKeys.objectKey)&q=animals"
+    static func getItems(searchQuery: String, completion: @escaping (Result <[Art], AppError>)->()) {
+        
+        let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "object"
+        
+        let endpointURLString = "https://www.rijksmuseum.nl/api/nl/collection?key=\(APIKeys.objectKey)&q=\(searchQuery)"
               
               guard let url = URL(string: endpointURLString) else {
                   completion(.failure(.badURL(endpointURLString)))
