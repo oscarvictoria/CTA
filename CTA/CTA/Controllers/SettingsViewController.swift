@@ -44,7 +44,9 @@ class SettingsViewController: UIViewController {
                 }
             }
         }
+        
     }
+    
     
     
     

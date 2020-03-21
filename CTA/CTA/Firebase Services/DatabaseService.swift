@@ -106,6 +106,16 @@ class DatabaseService {
         }
     }
     
+    public func removeFavorite(for event: FavoriteEvents, completion: @escaping (Result <Bool, Error>)->()) {
+        db.collection(DatabaseService.favoriteEvents).document(event.id).delete { (error) in
+            if let error = error {
+                completion(.failure(error))
+            } else {
+                completion(.success(true))
+            }
+        }
+    }
+    
     public func removeObject(for object: Art, completion: @escaping (Result <Bool, Error>)->()) {
         db.collection(DatabaseService.favoriteObjects).document(object.id).delete { (error) in
             if let error = error {
@@ -115,6 +125,16 @@ class DatabaseService {
             }
         }
     }
+    
+    public func removeFavoriteObject(for object: FavoriteObjects, completion: @escaping (Result <Bool, Error>)->()) {
+          db.collection(DatabaseService.favoriteObjects).document(object.id).delete { (error) in
+              if let error = error {
+                  completion(.failure(error))
+              } else {
+                  completion(.success(true))
+              }
+          }
+      }
     
     public func isEventInFavorites(for event: Events, completion: @escaping (Result <Bool, Error>)->()) {
         

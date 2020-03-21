@@ -34,8 +34,9 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lfe-Sg-DvW">
-                        <rect key="frame" x="230" y="118" width="77" height="70"/>
+                        <rect key="frame" x="259" y="142" width="20" height="22"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <state key="normal" image="heart" catalog="system"/>
                         <connections>
                             <action selector="favoriteButtonPressed:" destination="iMF-3T-YFT" eventType="touchUpInside" id="SOb-Vt-iSj"/>
                         </connections>
@@ -63,6 +64,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="64" height="58"/>
         <image name="photo" catalog="system" width="64" height="48"/>
     </resources>
 </document>

@@ -162,6 +162,15 @@ extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let detailVC = ElementsDetailViewController()
+        if navigationItem.title == "ticketmaster"  {
+            navigationItem.title = "ticketmaster"
+            let events = event[indexPath.row]
+            detailVC.events = events
+        } else if navigationItem.title == "Musuem" {
+            navigationItem.title = "Musuem"
+            let object = objects[indexPath.row]
+            detailVC.objects = object
+        }
         navigationController?.pushViewController(detailVC, animated: true)
     }
 }
@@ -207,7 +216,6 @@ extension FeedViewController: FavoriteCellDelegate {
             }
         }
     }
-    
 }
 
 extension FeedViewController: FavoriteObjectDelegate {

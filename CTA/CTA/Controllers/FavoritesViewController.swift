@@ -41,7 +41,7 @@ class FavoritesViewController: UIViewController {
         configureTableView()
         fetchEvents()
         fetchObjects()
-        
+
     }
     
     override func viewDidLoad() {
@@ -105,9 +105,11 @@ extension FavoritesViewController: UITableViewDataSource {
         
         if navigationItem.title == "ticketmaster" {
             let events = event[indexPath.row]
+            cell.removeFavoriteDelegate = self
             cell.configureFavoriteEvents(for: events)
         } else if navigationItem.title == "Musuem" {
             let object = objects[indexPath.row]
+            cell.removeObjectsDelegate = self
             cell.configureFavoriteObject(for: object)
         }
         
@@ -120,3 +122,47 @@ extension FavoritesViewController: UITableViewDelegate {
         return 220
     }
 }
+
+extension FavoritesViewController: RemoveFavoriteDelegate {
+    func buttonPressed(_ elementCell: ElementsCell) {
+        guard let indexPath = tableView.indexPath(for: elementCell) else {
+                return
+            }
+            
+            let events = event[indexPath.row]
+        databaseService.removeFavorite(for: events) { (result) in
+            switch result {
+            case .failure(let error):
+                print("error \(error)")
+            case .success:
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Item removed", message: nil)
+                }
+            }
+        }
+        
+    }
+}
+
+extension FavoritesViewController: RemoveObjectDelegate {
+    func favoriteButtonPressed(_ elementCell: ElementsCell) {
+        guard let indexPath = tableView.indexPath(for: elementCell) else {
+                 return
+             }
+             
+        let object = objects[indexPath.row]
+        databaseService.removeFavoriteObject(for: object) { (result ) in
+            switch result {
+            case .failure(let error):
+                print("error \(error)")
+            case .success:
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Item removed", message: nil)
+                }
+            }
+        }
+    }
+    
+    
+}
+

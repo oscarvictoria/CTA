@@ -9,6 +9,14 @@
 import UIKit
 import Kingfisher
 
+protocol RemoveObjectDelegate: AnyObject {
+    func favoriteButtonPressed(_ elementCell: ElementsCell)
+}
+
+protocol RemoveFavoriteDelegate: AnyObject {
+    func buttonPressed(_ elementCell: ElementsCell)
+}
+
 protocol FavoriteCellDelegate: AnyObject {
     func favoriteButtonPressed(_ elementsCell: ElementsCell)
 }
@@ -18,6 +26,10 @@ protocol FavoriteObjectDelegate: AnyObject {
 }
 
 class ElementsCell: UITableViewCell {
+    
+    var removeObjectsDelegate: RemoveObjectDelegate?
+    
+    var removeFavoriteDelegate: RemoveFavoriteDelegate?
     
     var delegate: FavoriteCellDelegate?
     
@@ -84,6 +96,11 @@ class ElementsCell: UITableViewCell {
     @IBAction func favoriteButtonPressed(_ sender: UIButton) {
         delegate?.favoriteButtonPressed(self)
         objectDelegate?.favoriteButton(self)
+        removeFavoriteDelegate?.buttonPressed(self)
+        removeObjectsDelegate?.favoriteButtonPressed(self)
     }
+    
+    
+    
     
 }
