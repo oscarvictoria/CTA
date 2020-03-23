@@ -60,7 +60,7 @@ class ElementsDetailViewController: UIViewController {
         navigationItem.title = ""
         detailView.picture.kf.setImage(with: eventImage)
         detailView.titleLabel.text = event.name
-        detailView.descriptionLabel.text = event.dates.start.localDate
+        detailView.textView.text = event.dates.start.localDate
     }
     
     func updateObjectUI() {
@@ -74,8 +74,16 @@ class ElementsDetailViewController: UIViewController {
         
         detailView.picture.kf.setImage(with: objectImage)
         detailView.titleLabel.text = object.title
-        detailView.descriptionLabel.text = ""
+        ObjectsAPIClient.getDetails(objectNumber: object.objectNumber) { (result) in
+            switch result {
+            case .failure(let appError):
+                print("appError \(appError)")
+            case .success(let string):
+                DispatchQueue.main.async {
+                    self.detailView.textView.text = string
+                }
+            }
+        }
     }
     
-
 }

@@ -9,5 +9,9 @@
 import Foundation
 
 struct ObjectsDetail: Codable {
-    let plaqueDescriptionEnglish: String
+    let artObject: Details
+}
+
+struct Details: Codable {
+    let plaqueDescriptionEnglish: String 
 }

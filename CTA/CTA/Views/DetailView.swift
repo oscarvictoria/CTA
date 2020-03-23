@@ -17,14 +17,15 @@ class DetailView: UIView {
         return picture
     }()
     
-    public lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.textAlignment = .center
-        label.text = "Description Label"
-        label.numberOfLines = 0
-        return label
-    }()
-    
+    public lazy var textView: UITextView = {
+         let textView = UITextView()
+         textView.isUserInteractionEnabled = false
+         textView.layer.cornerRadius = 3
+         textView.clipsToBounds = true
+         textView.font = UIFont.systemFont(ofSize: 14)
+         return textView
+     }()
+ 
     public lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
@@ -52,7 +53,7 @@ class DetailView: UIView {
     private func commonInit() {
         configurePicture()
         configurTitleLabel()
-        configureDescriptionLabel()
+        configureTextView()
         configureButton()
     }
     
@@ -63,7 +64,7 @@ class DetailView: UIView {
             picture.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
             picture.leadingAnchor.constraint(equalTo: leadingAnchor),
             picture.trailingAnchor.constraint(equalTo: trailingAnchor),
-            picture.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.4)
+            picture.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.2)
         ])
     }
     
@@ -77,13 +78,14 @@ class DetailView: UIView {
         ])
     }
     
-    private func configureDescriptionLabel() {
-        addSubview(descriptionLabel)
-        descriptionLabel.translatesAutoresizingMaskIntoConstraints = false
+    private func configureTextView() {
+        addSubview(textView)
+        textView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-            descriptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
+            textView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20),
+            textView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            textView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            textView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3)
         ])
     }
     
@@ -91,7 +93,7 @@ class DetailView: UIView {
         addSubview(favoriteButton)
         favoriteButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            favoriteButton.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 30),
+            favoriteButton.topAnchor.constraint(equalTo: textView.bottomAnchor, constant: 30),
             favoriteButton.centerXAnchor.constraint(equalTo: centerXAnchor)
         ])
     }

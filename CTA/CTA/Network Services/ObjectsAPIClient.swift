@@ -40,8 +40,8 @@ struct ObjectsAPIClient {
               }
           }
     
-    static func getDetails(objectID: String,completion: @escaping (Result <ObjectsDetail, AppError>)->()) {
-        let endpointURLString = "https://www.rijksmuseum.nl/api/nl/collection/\(objectID)?key=\(APIKeys.objectKey)&culture=nl / en"
+    static func getDetails(objectNumber: String,completion: @escaping (Result <String, AppError>)->()) {
+        let endpointURLString = "https://www.rijksmuseum.nl/api/nl/collection/\(objectNumber)?key=m9537BQo&culture=en"
         
         guard let url = URL(string: endpointURLString) else {
                  completion(.failure(.badURL(endpointURLString)))
@@ -57,7 +57,7 @@ struct ObjectsAPIClient {
                  case .success(let data):
                      do {
                          let items = try JSONDecoder().decode(ObjectsDetail.self, from: data)
-                        completion(.success(items))
+                        completion(.success(items.artObject.plaqueDescriptionEnglish))
                      } catch {
                          completion(.failure(.decodingError(error)))
                      }
