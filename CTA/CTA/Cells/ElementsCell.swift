@@ -95,8 +95,4 @@ class ElementsCell: UITableViewCell {
         removeFavoriteDelegate?.buttonPressed(self)
         removeObjectsDelegate?.favoriteButtonPressed(self)
     }
-    
-    
-    
-    
 }

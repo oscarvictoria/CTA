@@ -19,8 +19,10 @@ struct Events: Codable {
     let name: String
     let type: String
     let id: String
+    let url: String 
     let images: [Pictures]
     let dates: Dates
+    let priceRanges: [Price]
 }
 
 struct Pictures: Codable {
@@ -34,3 +36,9 @@ struct Dates: Codable {
 struct Times: Codable {
     let localDate: String
 }
+
+struct Price: Codable {
+    let min: Double
+    let max: Double
+}
+
