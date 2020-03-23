@@ -103,14 +103,33 @@ class LoginViewController: UIViewController {
     
     
     @IBAction func loginButtonPressed(_ sender: UIButton) {
-        continueLoginFlow(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        guard let email = emailTextField.text,
+            !email.isEmpty,
+            let password = passwordTextField.text,
+            !password.isEmpty else {
+                DispatchQueue.main.async {
+                    self.showAlert(title: "Missing Fields", message: nil)
+                }
+                return
+        }
+        continueLoginFlow(email: email, password: password)
     }
     
     
     
     @IBAction func createAccountButtonPressed(_ sender: UIButton) {
         accountState = accountState == .existingUser ? .newUser : .existingUser
-        continueLoginFlow(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
+        guard let email = emailTextField.text,
+                !email.isEmpty,
+                let password = passwordTextField.text,
+                !password.isEmpty else {
+                    DispatchQueue.main.async {
+                        self.showAlert(title: "Missing Fields", message: nil)
+                    }
+                    return
+            }
+        continueLoginFlow(email: email, password: password)
+        
     }
     
 }
